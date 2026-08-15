@@ -1337,3 +1337,207 @@ body.welcome-open { overflow: hidden; }
   .welcome-panel { padding: 32px 22px 26px; }
   .about-card-interactive { min-height: 300px; padding: 22px 18px 18px; }
 }
+
+/* ============================================================
+   开场动画
+   ============================================================ */
+.intro {
+  position: fixed; inset: 0; z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg);
+  text-align: center;
+  transition: opacity 0.7s var(--ease);
+}
+.intro.is-leaving { opacity: 0; pointer-events: none; }
+.intro-inner { padding: 24px; }
+.intro-en {
+  font-family: var(--font-mono);
+  font-size: 13px; letter-spacing: 6px; color: var(--lime);
+  opacity: 0; animation: introUp 0.7s var(--ease) forwards;
+}
+.intro-name {
+  font-family: var(--font-cn);
+  font-size: clamp(56px, 12vw, 120px); font-weight: 900;
+  letter-spacing: 0.08em; line-height: 1.1;
+  margin: 14px 0 12px;
+  opacity: 0; animation: introUp 0.7s 0.25s var(--ease) forwards;
+}
+.intro-name::after { content: "。"; color: var(--lime); }
+.intro-slogan {
+  font-size: 15px; color: var(--muted); letter-spacing: 2px;
+  opacity: 0; animation: introUp 0.7s 0.5s var(--ease) forwards;
+}
+@keyframes introUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+body.intro-lock { overflow: hidden; }
+
+/* ============================================================
+   彩带画布（成就解锁 / 彩蛋）
+   ============================================================ */
+.confetti-canvas {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 1450;
+}
+
+/* ============================================================
+   看完解锁成就
+   ============================================================ */
+.achievement {
+  position: fixed; inset: 0; z-index: 1600;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  background: rgba(5, 5, 8, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: achIn 0.4s var(--ease) both;
+}
+.achievement-card {
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(205, 255, 69, 0.12) 0%, transparent 55%),
+    var(--bg-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 22px;
+  padding: 40px 46px;
+  text-align: center;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+  max-width: 420px;
+}
+.achievement-emoji { font-size: 56px; display: block; margin-bottom: 12px; }
+.achievement-card h3 {
+  font-family: var(--font-cn);
+  font-size: 30px; font-weight: 800; margin-bottom: 10px;
+}
+.achievement-card p {
+  color: var(--muted); font-size: 15px; line-height: 1.9; margin-bottom: 24px;
+}
+@keyframes achIn { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: none; } }
+.unlock-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--lime);
+  border: 1px solid rgba(205, 255, 69, 0.4);
+  border-radius: 999px; padding: 6px 12px;
+}
+
+/* ============================================================
+   彩蛋模式（Konami 秘技 → 彩虹色）
+   ============================================================ */
+body.rainbow { animation: rainbowHue 0.8s linear infinite; }
+@keyframes rainbowHue { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
+
+/* ============================================================
+   爆款标题检测器
+   ============================================================ */
+.viral-box {
+  margin-top: 34px;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(255, 90, 31, 0.08) 0%, transparent 55%),
+    var(--bg-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 28px 26px 26px;
+}
+.viral-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 2px;
+  color: #0B0B0E; background: var(--orange);
+  padding: 5px 12px; border-radius: 999px; font-weight: 700;
+  margin-bottom: 12px;
+}
+.viral-title {
+  font-family: var(--font-cn);
+  font-size: clamp(20px, 2.6vw, 26px);
+  font-weight: 800; margin-bottom: 6px;
+}
+.viral-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.viral-form {
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.viral-form input {
+  flex: 1 1 260px;
+  background: var(--bg-3);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 15px; font-family: var(--font-body);
+  padding: 13px 20px;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.viral-form input:focus { border-color: var(--lime); box-shadow: 0 0 0 3px rgba(205, 255, 69, 0.15); }
+.viral-form input::placeholder { color: #6a6a76; }
+.viral-btn { white-space: nowrap; }
+.viral-result {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+.viral-score-row {
+  display: flex; align-items: baseline; gap: 8px;
+  margin-bottom: 12px;
+}
+.viral-score-label {
+  font-size: 13px; color: var(--muted); letter-spacing: 1px;
+  margin-right: auto;
+}
+.viral-score-num {
+  font-family: var(--font-en);
+  font-size: 44px; color: var(--lime); line-height: 1;
+}
+.viral-score-unit { font-size: 13px; color: var(--muted); }
+.viral-bar {
+  height: 10px; border-radius: 999px;
+  background: var(--bg-3);
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.viral-bar i {
+  display: block; height: 100%; width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--orange), var(--pink), var(--lime));
+  transition: width 0.1s linear;
+}
+.viral-verdict {
+  font-size: 15px; font-weight: 700; line-height: 1.7;
+  margin-bottom: 14px;
+}
+.viral-tips {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 18px;
+}
+.viral-tips span {
+  font-size: 12.5px; color: var(--muted);
+  background: var(--bg-3);
+  border: 1px solid var(--line);
+  border-radius: 999px; padding: 6px 12px;
+}
+.viral-again {
+  font-size: 13px; color: var(--lime);
+  background: none; border: 1px solid rgba(205, 255, 69, 0.4);
+  border-radius: 999px; padding: 8px 18px;
+  cursor: pointer; font-family: var(--font-body);
+  transition: background 0.25s, transform 0.25s;
+}
+.viral-again:hover { background: rgba(205, 255, 69, 0.1); transform: translateY(-2px); }
+
+/* ============================================================
+   简历按钮动画（打包 → 下载）
+   ============================================================ */
+a.is-loading {
+  pointer-events: none; opacity: 0.9;
+  position: relative; overflow: hidden;
+}
+.resume-progress {
+  position: absolute; left: 0; bottom: 0;
+  height: 4px; width: 100%;
+  transform-origin: left;
+  background: repeating-linear-gradient(90deg, var(--lime) 0 8px, var(--cyan) 8px 16px);
+  animation: resumeFill 0.9s var(--ease) forwards;
+}
+@keyframes resumeFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* 小屏适配 */
+@media (max-width: 640px) {
+  .achievement-card { padding: 30px 26px; }
+  .viral-box { padding: 22px 18px 20px; }
+}

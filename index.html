@@ -10,6 +10,15 @@
 </head>
 <body>
 
+<!-- 开场动画 -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-inner">
+    <p class="intro-en">YUYUE ZHOU</p>
+    <h1 class="intro-name">周雨悦</h1>
+    <p class="intro-slogan">让好内容被看见 · 让品牌被记住</p>
+  </div>
+</div>
+
 <!-- 欢迎弹窗（进入网站时的互动） -->
 <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
   <div class="welcome-backdrop" data-welcome-close></div>
@@ -182,6 +191,29 @@
         </div>
       </div>
     </div>
+
+    <div class="viral-box reveal">
+          <div class="viral-head">
+            <span class="viral-badge">🔥 互动实验室</span>
+            <h3 class="viral-title">试试你的标题能不能爆</h3>
+            <p class="viral-sub">输入一个标题，看看我的「爆款检测器」怎么打分 —— 纯娱乐，别当真 😄</p>
+          </div>
+          <div class="viral-form">
+            <input type="text" id="viralInput" maxlength="40" placeholder="比如：00后第一次拍广告，居然被导演夸了…" autocomplete="off">
+            <button class="btn btn-primary viral-btn" id="viralBtn" type="button">🔍 检测爆款潜力</button>
+          </div>
+          <div class="viral-result" id="viralResult" hidden>
+            <div class="viral-score-row">
+              <span class="viral-score-label">爆款潜力</span>
+              <span class="viral-score-num" id="viralScore">0</span>
+              <span class="viral-score-unit">/ 100</span>
+            </div>
+            <div class="viral-bar"><i id="viralBar"></i></div>
+            <p class="viral-verdict" id="viralVerdict"></p>
+            <div class="viral-tips" id="viralTips"></div>
+            <button class="viral-again" id="viralAgain" type="button">↻ 再测一次</button>
+          </div>
+        </div>
   </section>
 
   <!-- ============ 关于 ============ -->
@@ -432,6 +464,9 @@
     </div>
   </div>
 </dialog>
+
+<!-- 彩带画布（成就解锁 / 彩蛋用） -->
+<canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
 
 <script src="script.js"></script>
 </body>

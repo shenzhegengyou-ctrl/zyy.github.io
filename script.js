@@ -810,7 +810,21 @@ if (welcome) {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && welcome.classList.contains("is-open")) closeWelcome();
   });
-  openWelcome();
+  // 先播开场动画，再弹欢迎
+  document.body.classList.add("intro-lock");
+  const introEl = document.getElementById("intro");
+  if (introEl && !REDUCED_MOTION) {
+    setTimeout(() => introEl.classList.add("is-leaving"), 1750);
+    setTimeout(() => {
+      if (introEl.parentNode) introEl.parentNode.removeChild(introEl);
+      document.body.classList.remove("intro-lock");
+      openWelcome();
+    }, 2500);
+  } else {
+    if (introEl && introEl.parentNode) introEl.parentNode.removeChild(introEl);
+    document.body.classList.remove("intro-lock");
+    openWelcome();
+  }
 }
 
 /* ------------------------------------------------------------
@@ -886,3 +900,279 @@ if (copyWechatBtn) {
     });
   });
 }
+
+/* ============================================================
+   彩带引擎（成就解锁 / 彩蛋共用）
+   ============================================================ */
+const confettiCanvas = document.getElementById("confettiCanvas");
+const confettiCtx = confettiCanvas ? confettiCanvas.getContext("2d") : null;
+let confettiParticles = [];
+let confettiRaf = null;
+const CONFETTI_COLORS = ["#CDFF45", "#FF5A1F", "#8B5CF6", "#22D3EE", "#FF3D81", "#F2F2EC"];
+
+function resizeConfetti() {
+  if (!confettiCanvas) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  confettiCanvas.width = Math.floor(window.innerWidth * dpr);
+  confettiCanvas.height = Math.floor(window.innerHeight * dpr);
+  confettiCanvas.style.width = window.innerWidth + "px";
+  confettiCanvas.style.height = window.innerHeight + "px";
+  if (confettiCtx) confettiCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+window.addEventListener("resize", resizeConfetti);
+resizeConfetti();
+
+function fireConfetti(count, originX, originY) {
+  if (!confettiCtx) return;
+  const n = count || 160;
+  const fromCenter = originX === undefined;
+  for (let i = 0; i < n; i++) {
+    confettiParticles.push({
+      x: fromCenter ? Math.random() * window.innerWidth : originX,
+      y: fromCenter ? -20 - Math.random() * 50 : originY,
+      w: 6 + Math.random() * 8,
+      h: 8 + Math.random() * 10,
+      color: CONFETTI_COLORS[(Math.random() * CONFETTI_COLORS.length) | 0],
+      vx: (Math.random() - 0.5) * (fromCenter ? 7 : 11),
+      vy: 2 + Math.random() * 5,
+      rot: Math.random() * Math.PI * 2,
+      vr: (Math.random() - 0.5) * 0.22,
+      life: 1,
+    });
+  }
+  if (!confettiRaf) confettiRaf = requestAnimationFrame(confettiLoop);
+}
+function confettiLoop() {
+  if (!confettiCtx) return;
+  confettiCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  confettiParticles = confettiParticles.filter((p) => p.life > 0 && p.y < window.innerHeight + 80);
+  confettiParticles.forEach((p) => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.08;
+    p.rot += p.vr;
+    p.life -= 0.007;
+    confettiCtx.save();
+    confettiCtx.translate(p.x, p.y);
+    confettiCtx.rotate(p.rot);
+    confettiCtx.globalAlpha = Math.max(p.life, 0);
+    confettiCtx.fillStyle = p.color;
+    confettiCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+    confettiCtx.restore();
+  });
+  if (confettiParticles.length) {
+    confettiRaf = requestAnimationFrame(confettiLoop);
+  } else {
+    confettiRaf = null;
+    confettiCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  }
+}
+
+/* ============================================================
+   成就解锁：看完整个作品集
+   ============================================================ */
+const contactSection = document.getElementById("contact");
+let achievementUnlocked = false;
+if (contactSection && "IntersectionObserver" in window) {
+  const achObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !achievementUnlocked) {
+          achievementUnlocked = true;
+          achObserver.disconnect();
+          fireConfetti(220);
+          const banner = document.createElement("div");
+          banner.className = "achievement";
+          banner.setAttribute("role", "dialog");
+          banner.setAttribute("aria-modal", "true");
+          banner.innerHTML = `
+            <div class="achievement-card">
+              <span class="achievement-emoji">🏆</span>
+              <h3>成就解锁</h3>
+              <p>你完整看完了我的作品集，<br>是懂内容的人没错了 👏</p>
+              <button class="btn btn-primary" data-close-achievement>收下这份感谢</button>
+            </div>`;
+          document.body.appendChild(banner);
+          const closeAch = () => banner.remove();
+          banner.querySelector("[data-close-achievement]").addEventListener("click", closeAch);
+          banner.addEventListener("click", (e) => { if (e.target === banner) closeAch(); });
+          const footer = document.querySelector(".footer-inner");
+          if (footer) {
+            const badge = document.createElement("span");
+            badge.className = "unlock-badge";
+            badge.textContent = "🏆 已解锁：完整浏览";
+            footer.appendChild(badge);
+          }
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  achObserver.observe(contactSection);
+}
+
+/* ============================================================
+   隐藏彩蛋 1：连续点击 LOGO 5 次 → 撒花
+   ============================================================ */
+const navLogo = document.querySelector(".nav-logo");
+let logoClicks = 0;
+let logoTimer = null;
+if (navLogo) {
+  navLogo.addEventListener("click", () => {
+    logoClicks++;
+    clearTimeout(logoTimer);
+    logoTimer = setTimeout(() => { logoClicks = 0; }, 2600);
+    if (logoClicks >= 5) {
+      logoClicks = 0;
+      fireConfetti(120);
+      showToast("🎉 你发现了隐藏彩蛋！");
+      console.log("%c🎉 彩蛋达成：你连点了 LOGO 5 次", "color:#CDFF45;font-size:14px;font-weight:bold");
+    }
+  });
+}
+
+/* ============================================================
+   隐藏彩蛋 2：Konami 秘技 ↑↑↓↓←→←→BA → 彩虹模式
+   ============================================================ */
+const KONAMI = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+let konamiIdx = 0;
+document.addEventListener("keydown", (e) => {
+  if (e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
+  const k = e.key === "b" || e.key === "B" ? "b" : e.key === "a" || e.key === "A" ? "a" : e.key;
+  if (k === KONAMI[konamiIdx]) {
+    konamiIdx++;
+    if (konamiIdx === KONAMI.length) {
+      konamiIdx = 0;
+      document.body.classList.add("rainbow");
+      fireConfetti(160);
+      showToast("🌈 彩蛋模式启动！");
+      console.log("%c🌈 你输入了传说中的秘技！", "color:#22D3EE;font-size:14px;font-weight:bold");
+      setTimeout(() => document.body.classList.remove("rainbow"), 6000);
+    }
+  } else {
+    konamiIdx = k === KONAMI[0] ? 1 : 0;
+  }
+});
+
+/* ============================================================
+   爆款标题检测器
+   ============================================================ */
+function analyzeTitle(title) {
+  const s = title;
+  const tips = [];
+  let score = 30;
+  if (s.length >= 8 && s.length <= 22) {
+    score += 15;
+    tips.push("✅ 长度刚好，信息量适中");
+  } else if (s.length < 8) {
+    score += 5;
+    tips.push("⚠️ 有点短，可以再加点钩子");
+  } else {
+    score += 8;
+    tips.push("⚠️ 略长，前 10 个字要抓住眼球");
+  }
+  if (/\d/.test(s)) {
+    score += 12;
+    tips.push("✅ 带数字，更具体更可信");
+  }
+  const hotWords = ["00后", "内幕", "揭秘", "千万别", "为什么", "竟然", "居然", "挑战", "测评", "教程", "一招", "三天", "爆", "隐藏", "秘密", "惊", "第一次", "翻车", "血泪", "避雷", "下头", "上头"];
+  const hit = hotWords.filter((w) => s.includes(w));
+  if (hit.length) {
+    score += Math.min(hit.length * 8, 20);
+    tips.push("✅ 踩中热词：" + hit.slice(0, 3).join(" / "));
+  }
+  if (/[？?…]/.test(s)) {
+    score += 10;
+    tips.push("✅ 有悬念感，让人想点开");
+  }
+  if (["惊", "绝", "神", "离谱", "封神", "炸裂", "泪目", "笑死"].some((w) => s.includes(w))) {
+    score += 8;
+    tips.push("✅ 有情绪词，更有传播力");
+  }
+  if (/你|我|大家/.test(s)) {
+    score += 6;
+    tips.push("✅ 有代入感，像在跟人说话");
+  }
+  if (/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(s)) {
+    score += 5;
+    tips.push("✅ 带 emoji，视觉更吸睛");
+  }
+  score = Math.max(15, Math.min(score + ((Math.random() * 10) | 0), 99));
+  let verdict;
+  if (score >= 85) verdict = "🔥 爆款预定！这个标题有潜力，发出去可能真的要火";
+  else if (score >= 70) verdict = "✨ 相当不错！有钩子，再优化一下开头就更好";
+  else if (score >= 50) verdict = "😉 有点意思，但钩子不够狠，试试加悬念或数字";
+  else verdict = "🧊 稍显平淡，多埋点钩子，参考一下我的爆款方法论";
+  if (!tips.length) tips.push("💡 试试加入数字 / 悬念 / 情绪词，让标题更有钩子");
+  return { score, verdict, tips };
+}
+const viralInput = document.getElementById("viralInput");
+const viralBtn = document.getElementById("viralBtn");
+const viralResult = document.getElementById("viralResult");
+const viralScore = document.getElementById("viralScore");
+const viralBar = document.getElementById("viralBar");
+const viralVerdict = document.getElementById("viralVerdict");
+const viralTips = document.getElementById("viralTips");
+const viralAgain = document.getElementById("viralAgain");
+if (viralBtn && viralInput) {
+  const runViral = () => {
+    const title = viralInput.value.trim();
+    if (!title) {
+      showToast("先输入一个标题再检测～");
+      return;
+    }
+    const info = analyzeTitle(title);
+    viralResult.hidden = false;
+    viralResult.classList.remove("is-done");
+    viralScore.textContent = "0";
+    viralBar.style.width = "0%";
+    viralVerdict.textContent = "";
+    viralTips.innerHTML = "";
+    const t0 = performance.now();
+    const dur = 850;
+    const tick = (now) => {
+      const p = Math.min((now - t0) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      viralScore.textContent = Math.round(info.score * eased);
+      viralBar.style.width = (info.score * eased).toFixed(1) + "%";
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    setTimeout(() => {
+      viralVerdict.textContent = info.verdict;
+      viralTips.innerHTML = info.tips.map((t) => `<span>${t}</span>`).join("");
+      viralResult.classList.add("is-done");
+    }, 880);
+  };
+  viralBtn.addEventListener("click", runViral);
+  viralInput.addEventListener("keydown", (e) => { if (e.key === "Enter") runViral(); });
+  if (viralAgain) viralAgain.addEventListener("click", () => { viralInput.focus(); runViral(); });
+}
+
+/* ============================================================
+   简历按钮动画：📦 打包 → 下载
+   ============================================================ */
+document.querySelectorAll('a[href$="简历.pdf"][download]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (a.classList.contains("is-loading")) return;
+    a.classList.add("is-loading");
+    const originText = a.textContent;
+    a.textContent = "📦 打包中…";
+    const bar = document.createElement("span");
+    bar.className = "resume-progress";
+    a.appendChild(bar);
+    setTimeout(() => {
+      a.classList.remove("is-loading");
+      a.textContent = originText;
+      if (bar.parentNode) bar.parentNode.removeChild(bar);
+      const tmp = document.createElement("a");
+      tmp.href = a.href;
+      tmp.download = a.getAttribute("download") || "周雨悦-简历.pdf";
+      document.body.appendChild(tmp);
+      tmp.click();
+      document.body.removeChild(tmp);
+      showToast("📄 简历已开始下载，谢谢你的关注！");
+    }, 900);
+  });
+});
