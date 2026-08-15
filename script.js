@@ -19,10 +19,12 @@ window.addEventListener("load", () => window.scrollTo(0, 0));
 const VIDEO_LINKS = {
   gongyi: "https://b23.tv/qSVVKEf",  // 《看不见的伙伴》AI 公益广告（B站）
   grading: "https://b23.tv/RdkVtl2", // 调色划像对比-婚礼（B站）
-  mcd: "https://b23.tv/JlGxBq2",     // 麦当劳「百人派对」活动视频（B站）
+  mcd: "https://b23.tv/JlGxBq2",     // 麦当劳「百人派对」宣传片（B站）
   wahaha: "https://b23.tv/6H7W8jh",  // 娃哈哈 广告视频（B站）
   ae: "https://b23.tv/4tjR2TU",     // AE 特效合集（B站）
   trailer: "https://b23.tv/lLo4Ok1", // 预告片剪辑（B站）
+  movie: "https://b23.tv/WCr1Zhw",   // 电影剪辑练习（B站）
+  promo: "https://b23.tv/qoJkcgd",   // 宣传片剪辑（B站）
 };
 
 /* ------------------------------------------------------------
@@ -100,12 +102,11 @@ const works = [
     bullets: [
       "独立负责市场分析、用户调研、新品概念设计与视频广告脚本",
       "构建从新产品设计到传播的完整闭环方案",
-      "《米米的 360°「大揭秘」》为大赛最终提案汇报 PPT",
+      "📄 提案 PPT《米米的 360°「大揭秘」》可下载 · 完整策划案可联系我",
       "品牌奇妙夜大赛 · 团队第五名",
     ],
     media: [
-      { type: "download", label: "下载完整策划方案", file: "assets/pdf/freego-plan.docx", hint: "Word 文档 · 约 15MB" },
-      { type: "pdf", file: "assets/pdf/mimi-360.pdf", download: "assets/pdf/mimi-360.pdf", label: "提案 PPT《米米的 360°「大揭秘」》" },
+      { type: "pdf", file: "assets/pdf/mimi-360.pdf", download: "assets/pdf/mimi-360.pdf", label: "提案 PPT《米米的 360°「大揭秘」》", hint: "需要完整策划案可以联系我" },
     ],
   },
   {
@@ -213,19 +214,19 @@ const works = [
     catLabel: "视频广告",
     theme: "b",
     art: "MCD",
-    title: "麦当劳「百人派对」活动",
-    short: "麦当劳百人派对",
-    role: "活动策划 · 落地执行 · 社群运营",
+    title: "麦当劳「百人派对」宣传片",
+    short: "麦当劳宣传片",
+    role: "活动策划 · 宣发视频剪辑",
     badge: "60+ 家庭到场",
     year: "2025",
     summary:
-      "与团队协作完成百人派对全流程策划与线下执行，针对亲子家庭设计趣味互动环节，累计吸引 60+ 家庭到场，并完成私域社群沉淀，获麦当劳最佳策划方案团队奖。",
+      "本片是麦当劳「百人派对」线下项目的宣发视频：基于活动真实现场素材剪辑，突出亲子互动的趣味亮点，用于活动线上传播与私域触达。该项目由团队协作完成全流程策划与落地执行，累计吸引 60+ 家庭到场，获麦当劳最佳策划方案团队奖。",
     bullets: [
-      "全流程策划，精准触达亲子家庭核心受众",
-      "线下落地执行与现场体验保障",
-      "参与家庭导入品牌微信群，沉淀私域流量",
+      "本片为「百人派对」项目的宣发视频，本人负责剪辑",
+      "突出亲子互动亮点 · 用于线上传播与私域触达",
+      "项目全流程策划 · 60+ 家庭到场 · 最佳策划方案团队奖",
     ],
-    media: { type: "link", id: "mcd", label: "▶ 前往 B 站观看活动视频", hint: "麦当劳「百人派对」· 本人剪辑" },
+    media: { type: "link", id: "mcd", label: "▶ 前往 B 站观看宣传片", hint: "麦当劳「百人派对」宣发视频 · 本人剪辑" },
   },
   {
     id: "wahaha",
@@ -274,6 +275,46 @@ const works = [
       "▶ B站已上线，可在线观看",
     ],
     media: { type: "link", id: "trailer", label: "▶ 前往 B 站观看预告片", hint: "预告片剪辑作品" },
+  },
+  {
+    id: "movie-edit",
+    cat: "video",
+    catLabel: "视频剪辑",
+    theme: "e",
+    art: "FILM",
+    title: "电影剪辑练习（多机位 · 全英无字幕）",
+    short: "电影剪辑练习",
+    role: "视频剪辑 · DaVinci Resolve",
+    year: "2026",
+    summary:
+      "使用 DaVinci Resolve 剪辑多机位片段完成的电影剪辑练习：在多机位画面之间精准切换，同步人物走位与对白节奏，成片为全英无字幕视频，锻炼了对英文素材的理解力与剪辑节奏感。",
+    bullets: [
+      "DaVinci Resolve 多机位剪辑（Multicam）",
+      "多机位切换与叙事节奏把控",
+      "全英无字幕素材 · 音画同步处理",
+      "▶ B站已上线，可在线观看",
+    ],
+    media: { type: "link", id: "movie", label: "▶ 前往 B 站观看练习视频", hint: "电影剪辑练习 · DaVinci Resolve" },
+  },
+  {
+    id: "promo-edit",
+    cat: "video",
+    catLabel: "视频剪辑",
+    theme: "c",
+    art: "PROMO",
+    title: "宣传片剪辑（多机位 · 全英无字幕）",
+    short: "宣传片剪辑",
+    role: "视频剪辑 · DaVinci Resolve",
+    year: "2026",
+    summary:
+      "使用 DaVinci Resolve 剪辑多机位片段完成的宣传片作品：通过多机位切换与节奏化剪辑突出内容亮点，成片为全英无字幕视频，展现了英文内容的理解与宣传片叙事能力。",
+    bullets: [
+      "DaVinci Resolve 多机位剪辑（Multicam）",
+      "宣传片节奏化剪辑与亮点呈现",
+      "全英无字幕素材 · 音画同步处理",
+      "▶ B站已上线，可在线观看",
+    ],
+    media: { type: "link", id: "promo", label: "▶ 前往 B 站观看宣传片", hint: "宣传片剪辑 · DaVinci Resolve" },
   },
   {
     id: "design",
@@ -490,6 +531,7 @@ function actionsHTML(w) {
     }
     if (m.type === "pdf") {
       btns += `<a class="btn btn-primary" href="${m.download}" download>下载 ${m.label || "PDF"} ↓</a>`;
+      if (m.hint) btns += `<span class="modal-note">${m.hint}</span>`;
     }
     if (m.type === "download") {
       btns += `<a class="btn btn-primary" href="${m.file}" download>${m.label} ↓</a>`;
@@ -748,5 +790,99 @@ if (methodToggle && methodContent) {
   });
   document.querySelectorAll('a[href="#method"]').forEach((a) => {
     a.addEventListener("click", () => setMethodOpen(true));
+  });
+}
+
+/* ------------------------------------------------------------
+   欢迎弹窗（进入网站时弹出，点击按钮 / 背景 / ESC 关闭）
+   ------------------------------------------------------------ */
+const welcome = document.getElementById("welcome");
+if (welcome) {
+  const openWelcome = () => {
+    welcome.classList.add("is-open");
+    document.body.classList.add("welcome-open");
+  };
+  const closeWelcome = () => {
+    welcome.classList.remove("is-open");
+    document.body.classList.remove("welcome-open");
+  };
+  welcome.querySelectorAll("[data-welcome-close]").forEach((el) => el.addEventListener("click", closeWelcome));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && welcome.classList.contains("is-open")) closeWelcome();
+  });
+  openWelcome();
+}
+
+/* ------------------------------------------------------------
+   关于我 · 互动卡片打字机（循环输出一句话）
+   ------------------------------------------------------------ */
+const ABOUT_PHRASES = [
+  "小红书单篇 4万+ 浏览 · 赞藏 7000+",
+  "抖音爆款最高 160万+ 播放",
+  "一个人跑通 AI 视频全流程",
+  "品牌策划全案 · 团队第五名",
+];
+const aboutTypeEl = document.getElementById("aboutTypeText");
+if (aboutTypeEl) {
+  let api = 0, aci = 0, adeleting = false;
+  const aboutTick = () => {
+    const p = ABOUT_PHRASES[api];
+    if (!adeleting) {
+      aci++;
+      aboutTypeEl.textContent = p.slice(0, aci);
+      if (aci === p.length) {
+        setTimeout(() => { adeleting = true; aboutTick(); }, 2200);
+        return;
+      }
+      setTimeout(aboutTick, 55 + Math.random() * 60);
+    } else {
+      aci--;
+      aboutTypeEl.textContent = p.slice(0, aci);
+      if (aci === 0) {
+        adeleting = false;
+        api = (api + 1) % ABOUT_PHRASES.length;
+        setTimeout(aboutTick, 400);
+        return;
+      }
+      setTimeout(aboutTick, 28);
+    }
+  };
+  setTimeout(aboutTick, 600);
+}
+
+/* ------------------------------------------------------------
+   关于我 · 复制微信号 + 轻提示
+   ------------------------------------------------------------ */
+const WECHAT_ID = "zyy2005yyyy";
+const toastEl = document.getElementById("toast");
+let toastTimer;
+function showToast(msg) {
+  if (!toastEl) return;
+  toastEl.textContent = msg;
+  toastEl.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2400);
+}
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text).then(() => true).catch(() => false);
+  }
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.setAttribute("readonly", "");
+  ta.style.cssText = "position:fixed;left:-9999px;top:0;opacity:0;";
+  document.body.appendChild(ta);
+  ta.select();
+  let ok = false;
+  try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+  document.body.removeChild(ta);
+  return Promise.resolve(ok);
+}
+const copyWechatBtn = document.getElementById("copyWechat");
+if (copyWechatBtn) {
+  copyWechatBtn.addEventListener("click", () => {
+    copyText(WECHAT_ID).then((ok) => {
+      showToast(ok ? "✅ 微信号已复制，去微信搜索 zyy2005yyyy 添加我吧" : "微信：zyy2005yyyy（长按复制）");
+    });
   });
 }

@@ -10,6 +10,26 @@
 </head>
 <body>
 
+<!-- 欢迎弹窗（进入网站时的互动） -->
+<div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+  <div class="welcome-backdrop" data-welcome-close></div>
+  <div class="welcome-panel">
+    <p class="welcome-eyebrow">HELLO · 你好 👋</p>
+    <h2 class="welcome-title" id="welcomeTitle">欢迎来到我的作品集</h2>
+    <p class="welcome-text">我是<strong>周雨悦</strong>——一个相信「好内容本身就是生产力」的广告创意人。<br>这里装着我的作品、方法论和一些小惊喜，慢慢逛。</p>
+    <div class="welcome-stats">
+      <span><b>160万+</b> 抖音最高播放</span>
+      <span><b>4万+</b> 小红书单篇浏览</span>
+      <span><b>13.7K</b> 赞藏</span>
+    </div>
+    <button class="btn btn-primary welcome-btn" data-welcome-close>开始探索 ↓</button>
+    <p class="welcome-hint">按 ESC 也可以关闭</p>
+  </div>
+</div>
+
+<!-- 轻提示（复制微信号成功等） -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <!-- 自定义光标 -->
 <div class="cursor-dot" aria-hidden="true"></div>
 <div class="cursor-ring" aria-hidden="true"></div>
@@ -175,10 +195,20 @@
 
     <div class="about-grid">
       <div class="about-media reveal">
-        <div class="about-frame">
-          <img src="assets/img/作品集.jpg" alt="周雨悦完整版作品集（百度网盘）二维码">
+        <div class="about-card-interactive">
+          <div class="aci-top">
+            <span class="aci-badge">SNAPSHOT / 快照</span>
+            <span class="aci-live"><i></i>欢迎来聊</span>
+          </div>
+          <p class="aci-hello">你好，我是周雨悦 👋</p>
+          <p class="aci-type"><span id="aboutTypeText"></span><span class="aci-caret" aria-hidden="true"></span></p>
+          <div class="aci-actions">
+            <a class="aci-btn aci-mail" href="mailto:3505652346@qq.com">📧 发邮件</a>
+            <button class="aci-btn aci-wechat" id="copyWechat" type="button">💬 复制微信号</button>
+          </div>
+          <p class="aci-foot">微信：<span class="aci-wechat-val">zyy2005yyyy</span> · 复制后去微信搜索添加</p>
         </div>
-        <span class="about-sticker">完整版作品集<br>扫码查看</span>
+        <span class="about-sticker">随时欢迎<br>聊聊 💬</span>
       </div>
 
       <div class="about-text reveal">
