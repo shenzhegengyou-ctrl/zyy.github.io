@@ -243,7 +243,7 @@ const works = [
     bullets: ["PPM 脚本策划", "视频拍摄与执行", "后期剪辑与包装"],
     media: [
       { type: "link", id: "wahaha", label: "▶ 前往 B 站观看广告", hint: "娃哈哈 广告视频" },
-      { type: "pdf", file: "assets/pdf/娃哈哈视频广告PPM（含脚本）.pdf", download: "assets/pdf/娃哈哈视频广告PPM（含脚本）.pdf", label: "娃哈哈视频广告 PPM（含脚本）", hint: "🔍 可预览 · 提供 PDF 下载" },
+      { type: "pdf", file: "assets/pdf/娃哈哈视频广告PPM（含脚本）.pdf", label: "娃哈哈视频广告 PPM（含脚本）", hint: "🔍 可放大预览" },
     ],
   },
   {
