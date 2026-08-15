@@ -111,8 +111,8 @@ const works = [
   },
   {
     id: "zoo",
-    cat: "plan",
-    catLabel: "策划",
+    cat: "game",
+    catLabel: "独立游戏",
     theme: "e",
     art: "ZOO",
     action: "🎮 在线试玩",
@@ -362,13 +362,9 @@ const works = [
       "人群洞察：年轻人的 5 件焦虑 / 5 件自豪",
       "长文案《普通的英雄》致敬「打不倒的我们」",
       "核心概念：999 陪伴你斩关夺隘",
-      "📄 完整文案已附在下方，可放大阅读",
+      "🔍 PDF 完整排版，可放大预览",
     ],
-    media: [],
-    content: {
-      title: "📄 完整文案《普通的英雄》",
-      text: "标题：普通的英雄\n\n年青的我们，忐忑地踏入社会，像每个普通的青年一样，梦想成为不凡的英雄。\n\n迷茫，遗憾，犯过错，也有过成功。我们独自与世界交手，才发现自己比想象中普通，也比想象中坚强。我们会冲动，但不敢太出格；会疲惫，但不轻易屈服；会迷茫，会质疑，但不会彻底失去信心；会不自信，但也有自己的小骄傲。\n\n生命的底色，就是既有力量，又有软弱。我们看起来很普通，太普通，却是自己的英雄。\n\n999 感冒灵，伴你斩关夺隘。\n致敬打不倒的我们。",
-    },
+    media: { type: "pdf", file: "assets/pdf/999感冒灵品牌广告文案.pdf", label: "999感冒灵品牌广告文案（PDF）", hint: "🔍 放大查看完整排版" },
   },
   {
     id: "copy-supnice",
@@ -389,11 +385,7 @@ const works = [
       "标题《告别汗味尴尬，守护你的荣光！》",
       "📄 可下载完整文案",
     ],
-    media: [],
-    content: {
-      title: "📄 完整文案",
-      text: "标题：告别汗味尴尬，守护你的荣光！\n\n正文：汗水，是荣耀，有时却是困扰。运动场上，见证荣光，自信拼搏；运动场下，汗液从脖子向下流。迅速扩散的汗味、黏腻的运动服，都让你无力社交。碰到熟人，只想逃。\n现在，超能 SupNice，守护你的拼搏荣光！根源去异味分子配方，告别汗味尴尬，助你一路自信清爽！\n\n口号：去除异味，清爽运动。\n\n卖点：根源去异味配方，去除异味分子，根源去酸臭汗味。",
-    },
+    media: { type: "pdf", file: "assets/pdf/超能SupNice运动衣物洗衣液.pdf", label: "超能SupNice广告文案（PDF）", hint: "🔍 放大查看完整排版" },
   },
   {
     id: "grading",
@@ -425,10 +417,11 @@ const works = [
    渲染作品卡片
    ------------------------------------------------------------ */
 const grid = document.getElementById("workGrid");
-const SPAN_PATTERN = [7, 5, 6];
+const SPAN_PATTERN = [4, 4, 4];
 
 function coverHTML(w, index) {
-  const art = w.art ? `<div class="cover-art" aria-hidden="true">${w.art}</div>` : "";
+  const artSize = w.art ? Math.max(34, Math.min(110, Math.floor(520 / w.art.length))) : 80;
+  const art = w.art ? `<div class="cover-art" style="--art-size:${artSize}px" aria-hidden="true">${w.art}</div>` : "";
   const actionLabel =
     w.action ||
     (mediaList(w.media).some((m) => m.type === "video" || (m.type === "link" && (VIDEO_LINKS[m.id] || m.href)))
@@ -479,6 +472,10 @@ function cardHTML(w, index) {
 function renderGrid(filter) {
   const list = filter === "all" ? works : works.filter((w) => w.cat === filter);
   grid.innerHTML = list.map((w, i) => cardHTML(w, i)).join("");
+  const workTotalEl = document.getElementById("workTotal");
+  const workTotalEndEl = document.getElementById("workTotalEnd");
+  if (workTotalEl) workTotalEl.textContent = list.length;
+  if (workTotalEndEl) workTotalEndEl.textContent = list.length;
 
   const cards = grid.querySelectorAll(".work-card");
   cards.forEach((el, i) => {

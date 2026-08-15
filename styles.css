@@ -412,7 +412,7 @@ ul { list-style: none; }
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -58%);
   font-family: var(--font-en);
-  font-size: clamp(80px, 14vw, 160px);
+  font-size: var(--art-size, 80px);
   line-height: 1;
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(255,255,255,0.5);
@@ -1021,6 +1021,10 @@ html.has-cursor.no-cursor .cursor-ring { display: none; }
 
   .work-grid { grid-template-columns: 1fr; }
   .work-card { grid-column: span 1 !important; }
+}
+@media (max-width: 1024px) and (min-width: 641px) {
+  .work-grid { grid-template-columns: repeat(12, 1fr); }
+  .work-card { grid-column: span 6 !important; }
   .about-cards { grid-template-columns: 1fr; }
   .about-meta { grid-template-columns: 1fr; gap: 6px; }
   .skills-grid { grid-template-columns: 1fr; }
@@ -1608,3 +1612,29 @@ a.is-loading {
 @media (max-width: 640px) {
   .pdf-overlay { padding: 10px; }
 }
+
+/* 作品数量 + 到底提示 */
+.work-count {
+  margin: 0 0 18px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 13px; letter-spacing: 1px;
+  color: var(--muted);
+}
+.work-count span { color: var(--lime); font-weight: 700; }
+.work-end {
+  margin-top: 40px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 13px; letter-spacing: 3px;
+  color: var(--muted);
+}
+.work-end span {
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.work-end span::before,
+.work-end span::after {
+  content: ""; display: block; width: 60px; height: 1px;
+  background: var(--line-strong);
+}
+.work-end span b { color: var(--lime); font-weight: 700; }
