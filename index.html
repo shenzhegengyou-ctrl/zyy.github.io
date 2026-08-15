@@ -402,6 +402,31 @@
         <a class="btn btn-primary" href="assets/pdf/简历.pdf" download="周雨悦-简历.pdf">下载我的简历</a>
         <a class="btn btn-ghost" href="mailto:3505652346@qq.com">发送邮件 →</a>
       </div>
+
+      <!-- 留言墙：给周雨悦打分 + 留句话 -->
+      <div class="guestbook reveal">
+        <div class="guestbook-head">
+          <span class="guestbook-badge">💬 留言墙</span>
+          <h3 class="guestbook-title">给周雨悦留句话</h3>
+          <p class="guestbook-sub">打个分，再留句话——点一下「生成邮件发送」，会自动打开你的邮件应用并填好草稿，你只要点发送就送达啦～</p>
+        </div>
+        <div class="guestbook-body">
+          <div class="guestbook-stars" id="guestbookStars" role="radiogroup" aria-label="打分">
+            <button class="star" data-score="1" type="button" role="radio" aria-checked="false">☆</button>
+            <button class="star" data-score="2" type="button" role="radio" aria-checked="false">☆</button>
+            <button class="star" data-score="3" type="button" role="radio" aria-checked="false">☆</button>
+            <button class="star" data-score="4" type="button" role="radio" aria-checked="false">☆</button>
+            <button class="star" data-score="5" type="button" role="radio" aria-checked="false">☆</button>
+            <span class="guestbook-score-label" id="guestbookScoreLabel">5 分 · 超喜欢！</span>
+          </div>
+          <input type="text" id="guestbookName" maxlength="20" placeholder="你的称呼（可选）" autocomplete="off">
+          <textarea id="guestbookMsg" maxlength="300" rows="4" placeholder="想对周雨悦说什么？比如：对某个作品印象深刻、岗位推荐、建议…"></textarea>
+          <div class="guestbook-actions">
+            <button class="btn btn-primary" id="guestbookSend" type="button">✉️ 生成邮件发送</button>
+            <span class="guestbook-hint">纯前端实现 · 不会上传任何数据</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>

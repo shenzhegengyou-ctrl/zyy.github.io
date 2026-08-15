@@ -1138,3 +1138,65 @@ document.querySelectorAll('a[href$="简历.pdf"][download]').forEach((a) => {
     }, 900);
   });
 });
+
+/* ============================================================
+   留言墙：打分 + 留句话 → 生成邮件草稿
+   ============================================================ */
+const gbStars = document.getElementById("guestbookStars");
+const gbScoreLabel = document.getElementById("guestbookScoreLabel");
+const gbName = document.getElementById("guestbookName");
+const gbMsg = document.getElementById("guestbookMsg");
+const gbSend = document.getElementById("guestbookSend");
+if (gbStars && gbSend) {
+  const SCORE_LABELS = {
+    1: "1 分 · 需要加油",
+    2: "2 分 · 还行吧",
+    3: "3 分 · 挺不错的",
+    4: "4 分 · 很棒！",
+    5: "5 分 · 超喜欢！",
+  };
+  const starEls = Array.from(gbStars.querySelectorAll(".star"));
+  let gbScore = 5;
+  const paintStars = (score) => {
+    gbScore = score;
+    starEls.forEach((el) => {
+      const n = parseInt(el.dataset.score, 10);
+      const on = n <= score;
+      el.textContent = on ? "★" : "☆";
+      el.classList.toggle("is-on", on);
+      el.setAttribute("aria-checked", on ? "true" : "false");
+    });
+    if (gbScoreLabel) gbScoreLabel.textContent = SCORE_LABELS[score];
+  };
+  starEls.forEach((el) => {
+    el.addEventListener("click", () => paintStars(parseInt(el.dataset.score, 10)));
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        paintStars(parseInt(el.dataset.score, 10));
+      }
+    });
+  });
+  paintStars(5);
+
+  gbSend.addEventListener("click", () => {
+    const msg = gbMsg ? gbMsg.value.trim() : "";
+    if (!msg) {
+      showToast("先写句话再发送吧～");
+      if (gbMsg) gbMsg.focus();
+      return;
+    }
+    const name = (gbName ? gbName.value.trim() : "") || "匿名访客";
+    const subject = `作品集留言：${name}（${gbScore}/5）`;
+    const body = `评分：${gbScore}/5\n称呼：${name}\n\n留言：\n${msg}\n\n—— 来自作品集「留言墙」`;
+    const mailto = `mailto:3505652346@qq.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = document.createElement("a");
+    mailtoLink.id = "gbMailto";
+    mailtoLink.href = mailto;
+    mailtoLink.style.display = "none";
+    document.body.appendChild(mailtoLink);
+    mailtoLink.click();
+    mailtoLink.remove();
+    showToast("📨 邮件应用已打开，点「发送」就能送达我啦！");
+  });
+}
