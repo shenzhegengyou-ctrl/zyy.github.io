@@ -1516,13 +1516,6 @@ a.is-loading {
 .about-media { display: flex; }
 .about-card-interactive { flex: 1; }
 
-/* 页脚访问统计 */
-.footer-stats {
-  font-size: 12px; color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
-.footer-stats span { color: var(--lime); font-weight: 700; }
-
 /* 关于我卡片 · 数据快照 */
 .aci-stats {
   display: flex; gap: 10px; flex-wrap: wrap;
@@ -1545,4 +1538,73 @@ a.is-loading {
 }
 @media (max-width: 640px) {
   .aci-stats span { flex: 1 1 30%; }
+}
+
+/* ============================================================
+   PDF 放大预览（保护作品，不提供下载）
+   ============================================================ */
+.pdf-overlay {
+  position: fixed; inset: 0; z-index: 1700;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.pdf-overlay-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(5, 5, 8, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.pdf-overlay-panel {
+  position: relative;
+  width: min(1200px, 100%);
+  height: min(88vh, 100%);
+  background: var(--bg-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+  animation: achIn 0.35s var(--ease) both;
+}
+.pdf-overlay-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px; color: var(--ink);
+}
+.pdf-overlay-close {
+  background: none; border: 1px solid var(--line-strong);
+  color: var(--ink); border-radius: 999px;
+  padding: 6px 16px; cursor: pointer; font-size: 13px;
+  font-family: var(--font-body);
+  transition: border-color 0.25s, color 0.25s;
+}
+.pdf-overlay-close:hover { border-color: var(--lime); color: var(--lime); }
+.pdf-overlay-panel iframe {
+  flex: 1; width: 100%; border: none; background: #fff;
+}
+
+/* ============================================================
+   完整文案展示（广告文案作品）
+   ============================================================ */
+.modal-copy {
+  margin-top: 26px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+.modal-copy h4 {
+  font-family: var(--font-cn);
+  font-size: 17px; font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--lime);
+}
+.modal-copy-body p {
+  font-size: 15px; line-height: 1.9; color: var(--muted);
+  margin-bottom: 12px;
+}
+@media (max-width: 640px) {
+  .pdf-overlay { padding: 10px; }
 }

@@ -39,8 +39,8 @@ const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").mat
 const works = [
   {
     id: "xiuhu",
-    cat: "ai",
-    catLabel: "AI 创作",
+    cat: "video",
+    catLabel: "视频类",
     theme: "c",
     art: "RUST LAKE",
     title: "《锈湖血灾》AI 二创视频（《锈湖》系列同人）",
@@ -62,8 +62,8 @@ const works = [
   },
   {
     id: "gongyi",
-    cat: "ai",
-    catLabel: "AI 创作",
+    cat: "video",
+    catLabel: "视频类",
     theme: "b",
     art: "INVISIBLE",
     title: "《看不见的伙伴》AI 公益广告",
@@ -89,7 +89,7 @@ const works = [
   {
     id: "freego",
     cat: "plan",
-    catLabel: "品牌策划",
+    catLabel: "策划",
     theme: "a",
     art: "FREEGO",
     title: "Freego 品牌策划全案（含提案 PPT《米米的 360°「大揭秘」》）",
@@ -102,17 +102,17 @@ const works = [
     bullets: [
       "独立负责市场分析、用户调研、新品概念设计与视频广告脚本",
       "构建从新产品设计到传播的完整闭环方案",
-      "📄 提案 PPT《米米的 360°「大揭秘」》可下载 · 完整策划案可联系我",
+      "📄 提案 PPT《米米的 360°「大揭秘」》可放大预览 · 完整策划案可联系我",
       "品牌奇妙夜大赛 · 团队第五名",
     ],
     media: [
-      { type: "pdf", file: "assets/pdf/mimi-360.pdf", download: "assets/pdf/mimi-360.pdf", label: "提案 PPT《米米的 360°「大揭秘」》", hint: "需要完整策划案可以联系我" },
+      { type: "pdf", file: "assets/pdf/mimi-360.pdf", label: "提案 PPT《米米的 360°「大揭秘」》", hint: "需要完整策划案可以联系我" },
     ],
   },
   {
     id: "zoo",
-    cat: "ai",
-    catLabel: "AI 创作",
+    cat: "plan",
+    catLabel: "策划",
     theme: "e",
     art: "ZOO",
     action: "🎮 在线试玩",
@@ -165,8 +165,8 @@ const works = [
   },
   {
     id: "dy-game",
-    cat: "douyin",
-    catLabel: "抖音创作",
+    cat: "video",
+    catLabel: "视频类",
     theme: "b",
     art: "GAME",
     action: "▶ 去抖音看",
@@ -185,8 +185,8 @@ const works = [
   },
   {
     id: "dy-trend",
-    cat: "douyin",
-    catLabel: "抖音创作",
+    cat: "account",
+    catLabel: "账号运营",
     theme: "c",
     art: "HOT",
     action: "▶ 去抖音看",
@@ -211,7 +211,7 @@ const works = [
   {
     id: "mcd",
     cat: "video",
-    catLabel: "视频广告",
+    catLabel: "视频类",
     theme: "b",
     art: "MCD",
     title: "麦当劳「百人派对」宣传片",
@@ -231,7 +231,7 @@ const works = [
   {
     id: "wahaha",
     cat: "video",
-    catLabel: "视频广告",
+    catLabel: "视频类",
     theme: "d",
     art: "WAHAHA",
     title: "娃哈哈 广告视频",
@@ -246,7 +246,7 @@ const works = [
   {
     id: "ae",
     cat: "video",
-    catLabel: "视频广告",
+    catLabel: "视频类",
     theme: "c",
     art: "AE",
     title: "AE 特效合集（动态设计作品集）",
@@ -260,7 +260,7 @@ const works = [
   {
     id: "trailer",
     cat: "video",
-    catLabel: "视频广告",
+    catLabel: "视频类",
     theme: "a",
     art: "TRAILER",
     title: "预告片剪辑",
@@ -279,7 +279,7 @@ const works = [
   {
     id: "movie-edit",
     cat: "video",
-    catLabel: "视频剪辑",
+    catLabel: "视频类",
     theme: "e",
     art: "FILM",
     title: "电影剪辑练习（多机位 · 全英无字幕）",
@@ -299,7 +299,7 @@ const works = [
   {
     id: "promo-edit",
     cat: "video",
-    catLabel: "视频剪辑",
+    catLabel: "视频类",
     theme: "c",
     art: "PROMO",
     title: "宣传片剪辑（多机位 · 全英无字幕）",
@@ -328,7 +328,7 @@ const works = [
     year: "2024–2026",
     summary: "海报、主视觉、品牌物料等平面设计作品合集，均由 Photoshop / Illustrator 独立完成。",
     bullets: ["海报与主视觉设计", "品牌物料与延展", "版式与字体应用"],
-    media: { type: "download", label: "下载平面设计合集", file: "assets/pdf/平面设计合集.pdf", hint: "PDF · 约 14MB" },
+    media: { type: "pdf", file: "assets/pdf/平面设计合集.pdf", label: "平面设计合集（PDF 预览）", hint: "放大可查看作品细节" },
   },
   {
     id: "pr",
@@ -343,7 +343,7 @@ const works = [
     summary:
       "围绕小米汽车前舱门事件的公关应对分析，涵盖舆情研判、回应策略与传播节奏建议，展示危机公关的系统思考能力。",
     bullets: ["舆情发展与风险研判", "回应策略与话术建议", "传播节奏与效果评估"],
-    media: { type: "pdf", file: "assets/pdf/mi-pr-analysis.pdf", download: "assets/pdf/mi-pr-analysis.pdf" },
+    media: { type: "pdf", file: "assets/pdf/mi-pr-analysis.pdf", label: "公关应对分析（PDF 预览）" },
   },
   {
     id: "copy-999",
@@ -362,9 +362,13 @@ const works = [
       "人群洞察：年轻人的 5 件焦虑 / 5 件自豪",
       "长文案《普通的英雄》致敬「打不倒的我们」",
       "核心概念：999 陪伴你斩关夺隘",
-      "📄 可下载完整文案",
+      "📄 完整文案已附在下方，可放大阅读",
     ],
-    media: { type: "download", label: "下载完整文案", file: "assets/pdf/999感冒灵品牌广告文案.docx", hint: "Word 文档" },
+    media: [],
+    content: {
+      title: "📄 完整文案《普通的英雄》",
+      text: "标题：普通的英雄\n\n年青的我们，忐忑地踏入社会，像每个普通的青年一样，梦想成为不凡的英雄。\n\n迷茫，遗憾，犯过错，也有过成功。我们独自与世界交手，才发现自己比想象中普通，也比想象中坚强。我们会冲动，但不敢太出格；会疲惫，但不轻易屈服；会迷茫，会质疑，但不会彻底失去信心；会不自信，但也有自己的小骄傲。\n\n生命的底色，就是既有力量，又有软弱。我们看起来很普通，太普通，却是自己的英雄。\n\n999 感冒灵，伴你斩关夺隘。\n致敬打不倒的我们。",
+    },
   },
   {
     id: "copy-supnice",
@@ -385,12 +389,16 @@ const works = [
       "标题《告别汗味尴尬，守护你的荣光！》",
       "📄 可下载完整文案",
     ],
-    media: { type: "download", label: "下载完整文案", file: "assets/pdf/超能SupNice运动衣物洗衣液.docx", hint: "Word 文档" },
+    media: [],
+    content: {
+      title: "📄 完整文案",
+      text: "标题：告别汗味尴尬，守护你的荣光！\n\n正文：汗水，是荣耀，有时却是困扰。运动场上，见证荣光，自信拼搏；运动场下，汗液从脖子向下流。迅速扩散的汗味、黏腻的运动服，都让你无力社交。碰到熟人，只想逃。\n现在，超能 SupNice，守护你的拼搏荣光！根源去异味分子配方，告别汗味尴尬，助你一路自信清爽！\n\n口号：去除异味，清爽运动。\n\n卖点：根源去异味配方，去除异味分子，根源去酸臭汗味。",
+    },
   },
   {
     id: "grading",
-    cat: "grading",
-    catLabel: "调色",
+    cat: "video",
+    catLabel: "视频类",
     theme: "d",
     art: "COLOR",
     title: "调色划像对比 · 婚礼",
@@ -550,6 +558,10 @@ function mediaItemHTML(w, m) {
       <span class="mml-go">下载 ↓</span>
     </a>`;
   }
+  if (m.type === "content") {
+    const paras = m.text.split("\n").map((t) => t.trim()).filter(Boolean).map((t) => `<p>${t}</p>`).join("");
+    return `<div class="modal-copy"><h4>${m.title || "📄 完整文案"}</h4><div class="modal-copy-body">${paras}</div></div>`;
+  }
   if (m.type === "link") {
     const href = m.href || VIDEO_LINKS[m.id];
     if (!href) {
@@ -572,11 +584,7 @@ function actionsHTML(w) {
       btns += `<a class="btn btn-ghost" href="${m.download}" download="周雨悦-${w.id}.mp4">下载原片 ↓</a>`;
     }
     if (m.type === "pdf") {
-      btns += `<a class="btn btn-primary" href="${m.download}" download>下载 ${m.label || "PDF"} ↓</a>`;
-      if (m.hint) btns += `<span class="modal-note">${m.hint}</span>`;
-    }
-    if (m.type === "download") {
-      btns += `<a class="btn btn-primary" href="${m.file}" download>${m.label} ↓</a>`;
+      btns += `<button type="button" class="btn btn-primary pdf-zoom-btn" data-pdf-preview="${m.file}">🔍 放大预览</button>`;
       if (m.hint) btns += `<span class="modal-note">${m.hint}</span>`;
     }
     if (m.type === "link") {
@@ -626,9 +634,14 @@ function openWork(id) {
   for (const m of mediaList(w.media)) {
     (m.type === "image" ? belowMedia : topMedia).push(m);
   }
+  if (w.content) belowMedia.push({ type: "content", title: w.content.title, text: w.content.text });
   modalMedia.innerHTML = topMedia.map((m) => mediaItemHTML(w, m)).join("");
   document.getElementById("modalBelow").innerHTML = belowMedia.map((m) => mediaItemHTML(w, m)).join("");
-  document.getElementById("modalActions").innerHTML = actionsHTML(w);
+  const modalActionsEl = document.getElementById("modalActions");
+  modalActionsEl.innerHTML = actionsHTML(w);
+  modalActionsEl.querySelectorAll("[data-pdf-preview]").forEach((btn) => {
+    btn.addEventListener("click", () => openPdfPreview(btn.dataset.pdfPreview, w.title));
+  });
 
   modal.showModal();
   document.body.style.overflow = "hidden";
@@ -638,6 +651,34 @@ function closeWork() {
   modal.close();
   modalMedia.innerHTML = ""; // 停止视频播放
   document.body.style.overflow = "";
+}
+
+/* 放大预览 PDF（保护作品，不提供下载） */
+function openPdfPreview(src, title) {
+  const ov = document.createElement("div");
+  ov.className = "pdf-overlay";
+  ov.setAttribute("role", "dialog");
+  ov.setAttribute("aria-modal", "true");
+  ov.innerHTML = `
+    <div class="pdf-overlay-backdrop" data-close></div>
+    <div class="pdf-overlay-panel">
+      <div class="pdf-overlay-head">
+        <span>🔍 ${title || "作品预览"}</span>
+        <button class="pdf-overlay-close" data-close>✕ 关闭</button>
+      </div>
+      <iframe src="${src}" title="${title || "作品预览"}"></iframe>
+    </div>`;
+  document.body.appendChild(ov);
+  document.body.style.overflow = "hidden";
+  const closeOv = () => {
+    ov.remove();
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", escOv);
+  };
+  const escOv = (e) => { if (e.key === "Escape") closeOv(); };
+  ov.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", closeOv));
+  ov.addEventListener("click", (e) => { if (e.target === ov) closeOv(); });
+  document.addEventListener("keydown", escOv);
 }
 
 modal.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", closeWork));
