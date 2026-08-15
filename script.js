@@ -955,10 +955,21 @@ if (contactSection && "IntersectionObserver" in window) {
             <div class="achievement-card">
               <span class="achievement-emoji">🏆</span>
               <h3>成就解锁</h3>
-              <p>你竟然把作品集从头看到了尾——<br>这份耐心，比很多甲方都强！👏</p>
-              <button class="btn btn-primary" data-close-achievement>收下这份感谢</button>
+              <p>你竟然把作品集从头看到了尾——<br>这么有眼光的人，不加个微信认识一下？<br>微信：<span class="ach-wechat">zyy2005yyyy</span></p>
+              <div class="achievement-actions">
+                <button class="btn btn-primary" id="achCopyWechat" type="button">💬 复制微信号</button>
+                <button class="btn btn-ghost" data-close-achievement>先不聊</button>
+              </div>
             </div>`;
           document.body.appendChild(banner);
+          const achCopy = banner.querySelector("#achCopyWechat");
+          if (achCopy) {
+            achCopy.addEventListener("click", () => {
+              copyText(WECHAT_ID).then((ok) => {
+                showToast(ok ? "✅ 微信号已复制，去微信搜索 zyy2005yyyy 添加我吧" : "微信：zyy2005yyyy（长按复制）");
+              });
+            });
+          }
           const closeAch = () => banner.remove();
           banner.querySelector("[data-close-achievement]").addEventListener("click", closeAch);
           banner.addEventListener("click", (e) => { if (e.target === banner) closeAch(); });

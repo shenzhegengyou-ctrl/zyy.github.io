@@ -1326,3 +1326,9 @@ a.is-loading {
   .achievement-card { padding: 30px 26px; }
   .viral-box { padding: 22px 18px 20px; }
 }
+
+/* 成就弹窗：联系方式引导 */
+.achievement-actions {
+  display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+}
+.ach-wechat { color: var(--lime); font-weight: 800; letter-spacing: 0.5px; }
