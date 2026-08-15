@@ -241,7 +241,10 @@ const works = [
     summary:
       "从 PPM 脚本到成片的广告视频作业，独立完成创意构思、脚本撰写与视频制作全流程，体现扎实的视频广告基本功。",
     bullets: ["PPM 脚本策划", "视频拍摄与执行", "后期剪辑与包装"],
-    media: { type: "link", id: "wahaha", label: "▶ 前往 B 站观看广告", hint: "娃哈哈 广告视频" },
+    media: [
+      { type: "link", id: "wahaha", label: "▶ 前往 B 站观看广告", hint: "娃哈哈 广告视频" },
+      { type: "pdf", file: "assets/pdf/娃哈哈视频广告PPM（含脚本）.pdf", download: "assets/pdf/娃哈哈视频广告PPM（含脚本）.pdf", label: "娃哈哈视频广告 PPM（含脚本）", hint: "🔍 可预览 · 提供 PDF 下载" },
+    ],
   },
   {
     id: "ae",
@@ -427,9 +430,9 @@ const works = [
       "问卷设计与回收 · SPSS 交叉分析",
       "实地调研：瑞幸中山路旗舰店（NO.10000）洞察",
       "网络声量分析：巨量算数 / 百度指数 / 微信指数",
-      "🔍 问卷分析报告 PDF 可放大预览",
+      "🔍 调查结果报告 PDF 可放大预览 · 完整项目可联系我",
     ],
-    media: { type: "pdf", file: "assets/pdf/瑞幸咖啡市场调查.pdf", label: "瑞幸问卷分析报告（PDF）", hint: "🔍 放大查看完整报告" },
+    media: { type: "pdf", file: "assets/pdf/瑞幸咖啡调查结果报告.pdf", label: "瑞幸咖啡调查结果报告（PDF）", hint: "仅放部分 PPT 预览，完整项目可联系我查看。" },
   },
   {
     id: "campus-ad",
@@ -641,6 +644,7 @@ function actionsHTML(w) {
     }
     if (m.type === "pdf") {
       btns += `<button type="button" class="btn btn-primary pdf-zoom-btn" data-pdf-preview="${m.file}">🔍 放大预览</button>`;
+      if (m.download) btns += `<a class="btn btn-ghost" href="${m.download}" download>下载 PDF ↓</a>`;
       if (m.hint) btns += `<span class="modal-note">${m.hint}</span>`;
     }
     if (m.type === "link") {
