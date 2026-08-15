@@ -996,52 +996,71 @@ function analyzeTitle(title) {
   const tips = [];
   let score = 30;
   if (s.length >= 6 && s.length <= 22) {
-    score += 15;
+    score += 12;
     tips.push("✅ 长度适中，一眼能看完");
   } else if (s.length < 6) {
-    score += 4;
+    score += 3;
     tips.push("⚠️ 太短了，信息太少，加个钩子");
   } else {
-    score += 6;
+    score += 5;
     tips.push("⚠️ 偏长，前 10 个字就要抓住人");
   }
   if (/\d/.test(s)) {
-    score += 12;
+    score += 10;
     tips.push("✅ 有数字，具体、可信、好记");
   }
-  const hotWords = ["00后", "内幕", "揭秘", "千万别", "为什么", "竟然", "居然", "挑战", "测评", "教程", "一招", "三天", "爆", "隐藏", "秘密", "惊", "第一次", "翻车", "血泪", "避雷", "下头", "上头"];
+  const hotWords = ["00后", "内幕", "揭秘", "千万别", "为什么", "挑战", "测评", "教程", "一招", "三天", "爆", "隐藏", "秘密", "惊", "第一次", "下头", "上头"];
   const hit = hotWords.filter((w) => s.includes(w));
   if (hit.length) {
-    score += Math.min(hit.length * 8, 22);
+    score += Math.min(hit.length * 6, 18);
     tips.push("✅ 踩中热门词：" + hit.slice(0, 3).join(" / "));
   }
-  if (/[？?…]/.test(s)) {
-    score += 12;
-    tips.push("✅ 带悬念，让人想点开看答案");
-  }
-  if (["惊", "绝", "神", "离谱", "封神", "炸裂", "泪目", "笑死", "上头", "下头"].some((w) => s.includes(w))) {
+  const people = ["宝妈", "学生党", "打工人", "00后", "家长", "设计师", "运营", "程序员", "考研", "减肥", "新手", "小白", "女生", "男生", "中年人", "年轻人", "房东", "老板"];
+  const pplHit = people.filter((w) => s.includes(w));
+  if (pplHit.length) {
     score += 8;
+    tips.push("✅ 有人群定位（" + pplHit.slice(0, 2).join(" / ") + "），读者能对号入座");
+  }
+  if (/[？?]\s*$/.test(s)) {
+    score += 10;
+    tips.push("✅ 提问式收尾，直接和读者对话");
+  } else if (/[？?]/.test(s)) {
+    score += 6;
+    tips.push("✅ 带问号，有互动感");
+  }
+  if (/…|\.\.\./.test(s)) {
+    score += 7;
+    tips.push("✅ 省略号留悬念，让人想点开看答案");
+  }
+  const conflict = ["竟然", "居然", "反转", "没想到", "打脸", "逆袭", "从0", "到1", "翻车", "血泪", "避雷", "白天", "晚上", "一边", "曾经", "现在", "0基础", "一招"];
+  const cfHit = conflict.filter((w) => s.includes(w));
+  if (cfHit.length) {
+    score += 8;
+    tips.push("✅ 有冲突 / 反差（" + cfHit.slice(0, 2).join(" / ") + "），容易引发好奇");
+  }
+  if (["绝", "神", "离谱", "封神", "炸裂", "泪目", "笑死", "上头", "气哭"].some((w) => s.includes(w))) {
+    score += 6;
     tips.push("✅ 有情绪词，更容易被情绪驱动传播");
   }
   if (/你|我|大家/.test(s)) {
-    score += 6;
+    score += 5;
     tips.push("✅ 有代入感，像在跟读者说话");
   }
   if (/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(s)) {
-    score += 4;
+    score += 3;
     tips.push("✅ 带 emoji，列表页更显眼");
   }
   if (s.length > 28) {
     score -= 8;
     tips.push("❌ 超过 28 字，容易被折叠");
   }
-  if (!/[？?…]/.test(s) && !/\d/.test(s) && !hit.length) {
+  if (!/[？?…]/.test(s) && !/\d/.test(s) && !hit.length && !cfHit.length) {
     score -= 6;
-    tips.push("💡 没看到明显的钩子，试试数字 / 悬念 / 热词");
+    tips.push("💡 没看到明显的钩子，试试数字 / 悬念 / 冲突");
   }
   score = Math.max(10, Math.min(Math.round(score), 98));
   let verdict;
-  if (score >= 85) verdict = "🔥 爆款预定！数字、悬念、热词都踩中了，发出去很可能真的会火";
+  if (score >= 85) verdict = "🔥 爆款预定！人群、悬念、冲突都踩中了，发出去很可能真的会火";
   else if (score >= 70) verdict = "✨ 相当不错！钩子已经立起来了，再打磨一下开头更好";
   else if (score >= 50) verdict = "😉 有点意思，但钩子不够狠，试试加数字或悬念";
   else verdict = "🧊 稍显平淡，多埋点钩子，参考一下我的爆款方法论";
