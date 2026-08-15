@@ -794,40 +794,6 @@ if (methodToggle && methodContent) {
 }
 
 /* ------------------------------------------------------------
-   欢迎弹窗（进入网站时弹出，点击按钮 / 背景 / ESC 关闭）
-   ------------------------------------------------------------ */
-const welcome = document.getElementById("welcome");
-if (welcome) {
-  const openWelcome = () => {
-    welcome.classList.add("is-open");
-    document.body.classList.add("welcome-open");
-  };
-  const closeWelcome = () => {
-    welcome.classList.remove("is-open");
-    document.body.classList.remove("welcome-open");
-  };
-  welcome.querySelectorAll("[data-welcome-close]").forEach((el) => el.addEventListener("click", closeWelcome));
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && welcome.classList.contains("is-open")) closeWelcome();
-  });
-  // 先播开场动画，再弹欢迎
-  document.body.classList.add("intro-lock");
-  const introEl = document.getElementById("intro");
-  if (introEl && !REDUCED_MOTION) {
-    setTimeout(() => introEl.classList.add("is-leaving"), 1750);
-    setTimeout(() => {
-      if (introEl.parentNode) introEl.parentNode.removeChild(introEl);
-      document.body.classList.remove("intro-lock");
-      openWelcome();
-    }, 2500);
-  } else {
-    if (introEl && introEl.parentNode) introEl.parentNode.removeChild(introEl);
-    document.body.classList.remove("intro-lock");
-    openWelcome();
-  }
-}
-
-/* ------------------------------------------------------------
    关于我 · 互动卡片打字机（循环输出一句话）
    ------------------------------------------------------------ */
 const ABOUT_PHRASES = [
@@ -989,7 +955,7 @@ if (contactSection && "IntersectionObserver" in window) {
             <div class="achievement-card">
               <span class="achievement-emoji">🏆</span>
               <h3>成就解锁</h3>
-              <p>你完整看完了我的作品集，<br>是懂内容的人没错了 👏</p>
+              <p>你竟然把作品集从头看到了尾——<br>这份耐心，比很多甲方都强！👏</p>
               <button class="btn btn-primary" data-close-achievement>收下这份感谢</button>
             </div>`;
           document.body.appendChild(banner);
@@ -1012,100 +978,66 @@ if (contactSection && "IntersectionObserver" in window) {
 }
 
 /* ============================================================
-   隐藏彩蛋 1：连续点击 LOGO 5 次 → 撒花
-   ============================================================ */
-const navLogo = document.querySelector(".nav-logo");
-let logoClicks = 0;
-let logoTimer = null;
-if (navLogo) {
-  navLogo.addEventListener("click", () => {
-    logoClicks++;
-    clearTimeout(logoTimer);
-    logoTimer = setTimeout(() => { logoClicks = 0; }, 2600);
-    if (logoClicks >= 5) {
-      logoClicks = 0;
-      fireConfetti(120);
-      showToast("🎉 你发现了隐藏彩蛋！");
-      console.log("%c🎉 彩蛋达成：你连点了 LOGO 5 次", "color:#CDFF45;font-size:14px;font-weight:bold");
-    }
-  });
-}
-
-/* ============================================================
-   隐藏彩蛋 2：Konami 秘技 ↑↑↓↓←→←→BA → 彩虹模式
-   ============================================================ */
-const KONAMI = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
-let konamiIdx = 0;
-document.addEventListener("keydown", (e) => {
-  if (e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
-  const k = e.key === "b" || e.key === "B" ? "b" : e.key === "a" || e.key === "A" ? "a" : e.key;
-  if (k === KONAMI[konamiIdx]) {
-    konamiIdx++;
-    if (konamiIdx === KONAMI.length) {
-      konamiIdx = 0;
-      document.body.classList.add("rainbow");
-      fireConfetti(160);
-      showToast("🌈 彩蛋模式启动！");
-      console.log("%c🌈 你输入了传说中的秘技！", "color:#22D3EE;font-size:14px;font-weight:bold");
-      setTimeout(() => document.body.classList.remove("rainbow"), 6000);
-    }
-  } else {
-    konamiIdx = k === KONAMI[0] ? 1 : 0;
-  }
-});
-
-/* ============================================================
    爆款标题检测器
    ============================================================ */
 function analyzeTitle(title) {
-  const s = title;
+  const s = title.trim();
   const tips = [];
   let score = 30;
-  if (s.length >= 8 && s.length <= 22) {
+  if (s.length >= 6 && s.length <= 22) {
     score += 15;
-    tips.push("✅ 长度刚好，信息量适中");
-  } else if (s.length < 8) {
-    score += 5;
-    tips.push("⚠️ 有点短，可以再加点钩子");
+    tips.push("✅ 长度适中，一眼能看完");
+  } else if (s.length < 6) {
+    score += 4;
+    tips.push("⚠️ 太短了，信息太少，加个钩子");
   } else {
-    score += 8;
-    tips.push("⚠️ 略长，前 10 个字要抓住眼球");
+    score += 6;
+    tips.push("⚠️ 偏长，前 10 个字就要抓住人");
   }
   if (/\d/.test(s)) {
     score += 12;
-    tips.push("✅ 带数字，更具体更可信");
+    tips.push("✅ 有数字，具体、可信、好记");
   }
   const hotWords = ["00后", "内幕", "揭秘", "千万别", "为什么", "竟然", "居然", "挑战", "测评", "教程", "一招", "三天", "爆", "隐藏", "秘密", "惊", "第一次", "翻车", "血泪", "避雷", "下头", "上头"];
   const hit = hotWords.filter((w) => s.includes(w));
   if (hit.length) {
-    score += Math.min(hit.length * 8, 20);
-    tips.push("✅ 踩中热词：" + hit.slice(0, 3).join(" / "));
+    score += Math.min(hit.length * 8, 22);
+    tips.push("✅ 踩中热门词：" + hit.slice(0, 3).join(" / "));
   }
   if (/[？?…]/.test(s)) {
-    score += 10;
-    tips.push("✅ 有悬念感，让人想点开");
+    score += 12;
+    tips.push("✅ 带悬念，让人想点开看答案");
   }
-  if (["惊", "绝", "神", "离谱", "封神", "炸裂", "泪目", "笑死"].some((w) => s.includes(w))) {
+  if (["惊", "绝", "神", "离谱", "封神", "炸裂", "泪目", "笑死", "上头", "下头"].some((w) => s.includes(w))) {
     score += 8;
-    tips.push("✅ 有情绪词，更有传播力");
+    tips.push("✅ 有情绪词，更容易被情绪驱动传播");
   }
   if (/你|我|大家/.test(s)) {
     score += 6;
-    tips.push("✅ 有代入感，像在跟人说话");
+    tips.push("✅ 有代入感，像在跟读者说话");
   }
   if (/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(s)) {
-    score += 5;
-    tips.push("✅ 带 emoji，视觉更吸睛");
+    score += 4;
+    tips.push("✅ 带 emoji，列表页更显眼");
   }
-  score = Math.max(15, Math.min(score + ((Math.random() * 10) | 0), 99));
+  if (s.length > 28) {
+    score -= 8;
+    tips.push("❌ 超过 28 字，容易被折叠");
+  }
+  if (!/[？?…]/.test(s) && !/\d/.test(s) && !hit.length) {
+    score -= 6;
+    tips.push("💡 没看到明显的钩子，试试数字 / 悬念 / 热词");
+  }
+  score = Math.max(10, Math.min(Math.round(score), 98));
   let verdict;
-  if (score >= 85) verdict = "🔥 爆款预定！这个标题有潜力，发出去可能真的要火";
-  else if (score >= 70) verdict = "✨ 相当不错！有钩子，再优化一下开头就更好";
-  else if (score >= 50) verdict = "😉 有点意思，但钩子不够狠，试试加悬念或数字";
+  if (score >= 85) verdict = "🔥 爆款预定！数字、悬念、热词都踩中了，发出去很可能真的会火";
+  else if (score >= 70) verdict = "✨ 相当不错！钩子已经立起来了，再打磨一下开头更好";
+  else if (score >= 50) verdict = "😉 有点意思，但钩子不够狠，试试加数字或悬念";
   else verdict = "🧊 稍显平淡，多埋点钩子，参考一下我的爆款方法论";
   if (!tips.length) tips.push("💡 试试加入数字 / 悬念 / 情绪词，让标题更有钩子");
   return { score, verdict, tips };
 }
+
 const viralInput = document.getElementById("viralInput");
 const viralBtn = document.getElementById("viralBtn");
 const viralResult = document.getElementById("viralResult");
