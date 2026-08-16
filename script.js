@@ -653,7 +653,7 @@ function actionsHTML(w) {
         btns += `<a class="btn btn-primary" href="${href}" target="_blank" rel="noopener">${m.label || "在线观看 ↗"}</a>`;
         if (m.hint) btns += `<span class="modal-note">${m.hint}</span>`;
       } else {
-        btns += `<a class="btn btn-primary" href="mailto:3505652346@qq.com">📮 邮箱联系我获取</a>`;
+        btns += `<a class="btn btn-primary" href="https://mail.qq.com/" target="_blank" rel="noopener">📮 邮箱联系我获取</a>`;
         btns += `<span class="modal-note">或通过微信联系：zyy2005yyyy</span>`;
       }
     }
