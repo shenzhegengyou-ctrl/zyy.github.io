@@ -181,7 +181,7 @@ const works = [
       "个人抖音号「恐怖国王饼」发布",
       "▶ 前往抖音查看",
     ],
-    media: { type: "link", href: "https://v.douyin.com/Z9IbFRpUA80/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音" },
+    media: { type: "link", href: "https://v.douyin.com/xRRLnQ8Ktjc/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音" },
   },
   {
     id: "dy-trend",
@@ -206,8 +206,206 @@ const works = [
     notes: [
       { q: "爆款是怎么来的？", a: "内容来自我自己的亲身经历。发布时为了蹭热点，我在文案里带上了当时很火的梗——「AI 杀了 AI」「以后不能说 AI，要说滚滚长江东逝水」，最后很幸运地火了。" },
     ],
-    media: { type: "link", href: "https://v.douyin.com/2h4gI70So2o/", label: "📱 前往抖音查看", hint: "恐怖国王饼 · 抖音" },
+    media: { type: "link", href: "https://v.douyin.com/z5Ul49JQQKg/", label: "📱 前往抖音查看", hint: "恐怖国王饼 · 抖音" },
   },
+
+  {
+    id: "dy-love1",
+    cat: "account",
+    catLabel: "账号运营",
+    theme: "d",
+    art: "LOVE",
+    action: "▶ 去抖音看",
+    title: "抖音图文爆款《我还是留子+艺术生，buff 叠满了》（光与夜之恋）",
+    short: "光与夜·图文爆款①",
+    role: "个人抖音号「恐怖国王饼」",
+    year: "2025",
+    badge: "2.9万+ 点赞",
+    summary:
+      "以「留子 + 艺术生」双重身份梗切入《光与夜之恋》玩家圈层的图文爆款：身份共鸣 + 圈层梗让内容快速传播，收获 2.9 万+ 点赞。",
+    bullets: [
+      "圈层梗 + 身份共鸣选题",
+      "图文形式快速产出爆款",
+      "个人抖音号「恐怖国王饼」发布",
+      "▶ 前往抖音查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/t-uumqGBnAo/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 2.9万+ 点赞" },
+  },
+  {
+    id: "dy-love2",
+    cat: "account",
+    catLabel: "账号运营",
+    theme: "b",
+    art: "MALE",
+    action: "▶ 去抖音看",
+    title: "抖音图文爆款《哥好帅，光头你能不能再让他上一次男刊》（光与夜之恋）",
+    short: "光与夜·图文爆款②",
+    role: "个人抖音号「恐怖国王饼」",
+    year: "2025",
+    badge: "2.9万+ 点赞",
+    summary:
+      "以角色颜值向「玩梗吐槽」切入《光与夜之恋》玩家圈层，粉丝向内容引发大量共鸣与转发，收获 2.9 万+ 点赞。",
+    bullets: [
+      "粉丝向玩梗吐槽选题",
+      "精准命中角色粉情绪点",
+      "个人抖音号「恐怖国王饼」发布",
+      "▶ 前往抖音查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/e5-zeQGcMtA/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 2.9万+ 点赞" },
+  },
+  {
+    id: "dy-xiaoyi-img",
+    cat: "account",
+    catLabel: "账号运营",
+    theme: "a",
+    art: "XIAO",
+    action: "▶ 去抖音看",
+    title: "抖音图文爆款「萧逸」角色向内容",
+    short: "萧逸·图文爆款",
+    role: "个人抖音号「恐怖国王饼」",
+    year: "2025",
+    badge: "3000+ 点赞",
+    summary:
+      "单角色向图文内容，精准命中乙游玩家对角色「萧逸」的喜爱，收获 3000+ 点赞。",
+    bullets: [
+      "单角色向内容创作",
+      "精准命中角色粉圈层",
+      "个人抖音号「恐怖国王饼」发布",
+      "▶ 前往抖音查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/1np4m3rsqu0/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 3000+ 点赞" },
+  },
+  {
+    id: "dy-xiaoyi-vid",
+    cat: "account",
+    catLabel: "账号运营",
+    theme: "e",
+    art: "YI",
+    action: "▶ 去抖音看",
+    title: "抖音视频爆款「萧逸」角色向内容",
+    short: "萧逸·视频爆款",
+    role: "个人抖音号「恐怖国王饼」",
+    year: "2025",
+    badge: "300+ 点赞",
+    summary:
+      "角色向视频内容，用卡点与情绪表达呈现角色魅力，收获 300+ 点赞。",
+    bullets: [
+      "角色向卡点视频",
+      "个人抖音号「恐怖国王饼」发布",
+      "▶ 前往抖音查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/Ijhu6cFDB2w/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 300+ 点赞" },
+  },
+  {
+    id: "dy-shenxinghui",
+    cat: "account",
+    catLabel: "账号运营",
+    theme: "c",
+    art: "XING",
+    action: "▶ 去抖音看",
+    title: "抖音视频爆款「好帅……沈星回」",
+    short: "沈星回·视频爆款",
+    role: "个人抖音号「恐怖国王饼」",
+    year: "2025",
+    badge: "800+ 点赞",
+    summary:
+      "以角色「沈星回」颜值向内容制作视频，收获 800+ 点赞，是游戏向内容里数据较好的一条。",
+    bullets: [
+      "角色颜值向内容",
+      "个人抖音号「恐怖国王饼」发布",
+      "▶ 前往抖音查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/r9b5Erdk_lk/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 800+ 点赞" },
+  },
+  {
+    id: "dy-rustlake",
+    cat: "account",
+    catLabel: "账号运营",
+    theme: "b",
+    art: "LAKE",
+    action: "▶ 去抖音看",
+    title: "抖音剧情视频《锈湖》同人向内容",
+    short: "锈湖·剧情视频",
+    role: "个人抖音号「恐怖国王饼」",
+    year: "2025",
+    badge: "100+ 点赞",
+    summary:
+      "《锈湖》系列同人剧情视频，用游戏叙事氛围打动同好玩家，收获 100+ 点赞。",
+    bullets: [
+      "游戏同人剧情创作",
+      "氛围向叙事表达",
+      "个人抖音号「恐怖国王饼」发布",
+      "▶ 前往抖音查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/iPdooUE5Y2g/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 100+ 点赞" },
+  },
+  {
+    id: "dy-crab",
+    cat: "account",
+    catLabel: "账号运营",
+    theme: "d",
+    art: "CRAB",
+    action: "▶ 去抖音看",
+    title: "抖音游戏攻略《无伤拿下帝王蟹》（饥荒联机版）",
+    short: "饥荒·帝王蟹攻略",
+    role: "个人抖音号「恐怖国王饼」",
+    year: "2025",
+    badge: "100+ 点赞",
+    summary:
+      "游戏技巧攻略向视频，分享「指南针卡位法」实用打法，为玩家提供真实价值，收获 100+ 点赞。",
+    bullets: [
+      "实用攻略向内容",
+      "「指南针卡位法」打法分享",
+      "个人抖音号「恐怖国王饼」发布",
+      "▶ 前往抖音查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/ZKx9HlsE5Jk/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 100+ 点赞" },
+  },
+  {
+    id: "dy-meme1",
+    cat: "account",
+    catLabel: "账号运营",
+    theme: "a",
+    art: "MEME",
+    action: "▶ 去抖音看",
+    title: "抖音玩梗视频爆款①",
+    short: "玩梗爆款①",
+    role: "个人抖音号「恐怖国王饼」",
+    year: "2025",
+    badge: "100+ 点赞",
+    summary:
+      "娱乐玩梗向短视频，用网络热梗创作轻松内容，展现对年轻人语境的把握，收获 100+ 点赞。",
+    bullets: [
+      "网络热梗内容创作",
+      "轻松娱乐向表达",
+      "个人抖音号「恐怖国王饼」发布",
+      "▶ 前往抖音查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/DstHahBB5vk/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 100+ 点赞" },
+  },
+  {
+    id: "dy-meme2",
+    cat: "account",
+    catLabel: "账号运营",
+    theme: "e",
+    art: "FUN",
+    action: "▶ 去抖音看",
+    title: "抖音玩梗视频爆款②",
+    short: "玩梗爆款②",
+    role: "个人抖音号「恐怖国王饼」",
+    year: "2025",
+    badge: "300+ 点赞",
+    summary:
+      "娱乐玩梗向短视频，节奏轻快、网感在线，收获 300+ 点赞。",
+    bullets: [
+      "网络热梗内容创作",
+      "节奏轻快的娱乐向表达",
+      "个人抖音号「恐怖国王饼」发布",
+      "▶ 前往抖音查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/WGBzaxyRwfU/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 300+ 点赞" },
+  },
+
   {
     id: "mcd",
     cat: "video",
@@ -516,14 +714,16 @@ function coverHTML(w, index) {
     </div>`;
 }
 
+const HOT_CATS = ["account", "game", "plan"];
 function cardHTML(w, index) {
+  const isHot = HOT_CATS.includes(w.cat);
   return `
-    <article class="work-card" data-id="${w.id}" data-cat="${w.cat}" role="listitem">
+    <article class="work-card${isHot ? " work-card--hot" : ""}" data-id="${w.id}" data-cat="${w.cat}" role="listitem">
       <button class="work-card-btn" data-open="${w.id}" aria-label="查看作品：${w.title}">
         ${coverHTML(w, index)}
       </button>
       <div class="card-meta">
-        <span class="card-cat">${w.catLabel}</span>
+        <span class="card-cat">${isHot ? "★ " : ""}${w.catLabel}</span>
         <span class="card-year">${w.year}</span>
       </div>
       <h3 class="card-title">${w.title}</h3>
@@ -531,8 +731,12 @@ function cardHTML(w, index) {
     </article>`;
 }
 
+const CAT_ORDER = { account: 0, game: 1, plan: 2, video: 3, pr: 4, design: 5, copy: 6, research: 7 };
 function renderGrid(filter) {
-  const list = filter === "all" ? works : works.filter((w) => w.cat === filter);
+  const list =
+    filter === "all"
+      ? [...works].sort((a, b) => (CAT_ORDER[a.cat] ?? 9) - (CAT_ORDER[b.cat] ?? 9))
+      : works.filter((w) => w.cat === filter);
   grid.innerHTML = list.map((w, i) => cardHTML(w, i)).join("");
   const workTotalEl = document.getElementById("workTotal");
   const workTotalEndEl = document.getElementById("workTotalEnd");

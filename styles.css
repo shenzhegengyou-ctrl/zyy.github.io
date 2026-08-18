@@ -1638,3 +1638,31 @@ a.is-loading {
   background: var(--line-strong);
 }
 .work-end span b { color: var(--lime); font-weight: 700; }
+
+
+/* ---------- 重点分类（账号运营 / 独立游戏 / 策划）高亮 ---------- */
+.filter-hot {
+  color: var(--lime);
+  border-color: rgba(207, 255, 71, 0.45);
+  background: rgba(207, 255, 71, 0.06);
+  box-shadow: 0 0 14px rgba(207, 255, 71, 0.12);
+}
+.filter-hot::before { content: "★"; margin-right: 6px; }
+.filter-hot:hover {
+  color: var(--lime);
+  background: rgba(207, 255, 71, 0.14);
+  border-color: var(--lime);
+}
+.filter-hot.is-active {
+  background: var(--lime); color: #0B0B0E; border-color: var(--lime);
+}
+.work-card--hot .cover {
+  border-color: rgba(207, 255, 71, 0.32);
+}
+.work-card--hot .card-title::after {
+  content: ""; display: block;
+  width: 36px; height: 3px;
+  border-radius: 2px;
+  background: var(--lime);
+  margin-top: 10px;
+}
