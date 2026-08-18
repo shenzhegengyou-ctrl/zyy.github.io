@@ -127,7 +127,7 @@ const works = [
       "规则怪谈题材 · 轻量化文字互动网页游戏（Sugarcube2 + AIGC 内容生成）",
       "多结局剧情，文字风格随「认知污染」程度动态变化",
       "团队成果：兔耳象工作室 · 创客实验课",
-      "个人负责：汇报 / PPT / BGM+音效（Suno + Stable Audio）/ 用户调研 / 网络宣发",
+      "个人负责：网络宣发 / 用户调研 / BGM+音效（Suno + Stable Audio）/ PPT / 汇报",
       "🎮 在线试玩（建议电脑浏览器打开，卡顿可开加速器）",
       "📕 小红书宣传：视频帖《欢迎光临欢乐动物园》+ 图文帖《慎入！这个兔耳大象把我们整懵了》",
     ],
@@ -145,6 +145,7 @@ const works = [
     id: "xhs",
     cat: "account",
     catLabel: "账号运营",
+    group: "xhs",
     theme: "e",
     art: "XHS",
     action: "📕 查看主页",
@@ -163,247 +164,111 @@ const works = [
     ],
     media: { type: "link", href: "https://xhslink.cn/m/6EMojsXOShR", label: "📕 前往我的小红书主页", hint: "看看我的主页" },
   },
-  {
-    id: "dy-game",
-    cat: "account",
-    catLabel: "账号运营",
-    theme: "b",
-    art: "GAME",
-    action: "▶ 去抖音看",
-    title: "抖音游戏视频《谢谢猪哥》（饥荒联机版）",
-    short: "谢谢猪哥",
-    role: "个人抖音号「恐怖国王饼」",
-    year: "2025",
-    summary:
-      "在个人抖音号发布的《饥荒联机版》游戏内容视频《谢谢猪哥》，以游戏题材创作娱乐向内容，展现对年轻用户内容喜好与平台玩法的理解。",
-    bullets: [
-      "游戏内容创作：《饥荒联机版》",
-      "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
-    ],
-    media: { type: "link", href: "https://v.douyin.com/xRRLnQ8Ktjc/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音" },
-  },
-  {
-    id: "dy-trend",
-    cat: "account",
-    catLabel: "账号运营",
-    theme: "c",
-    art: "HOT",
-    action: "▶ 去抖音看",
-    title: "抖音热点爆款图文《皇后杀了皇后，AI 杀了 AI》",
-    short: "AI 杀了 AI",
-    role: "个人抖音号「恐怖国王饼」",
-    year: "2025",
-    summary:
-      "紧跟热点事件创作的抖音图文爆款《皇后杀了皇后，AI 杀了 AI》：借势 AI 话题热度快速产出内容，展现选题敏感度与热点借势能力。",
-    bullets: [
-      "紧跟热点事件的内容借势创作",
-      "图文形式快速产出爆款",
-      "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
-    ],
-    badge: "160万+ 播放 · 3.4万 点赞",
-    notes: [
-      { q: "爆款是怎么来的？", a: "内容来自我自己的亲身经历。发布时为了蹭热点，我在文案里带上了当时很火的梗——「AI 杀了 AI」「以后不能说 AI，要说滚滚长江东逝水」，最后很幸运地火了。" },
-    ],
-    media: { type: "link", href: "https://v.douyin.com/z5Ul49JQQKg/", label: "📱 前往抖音查看", hint: "恐怖国王饼 · 抖音" },
-  },
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   {
-    id: "dy-love1",
+    id: "dy-img",
     cat: "account",
     catLabel: "账号运营",
-    theme: "d",
-    art: "LOVE",
-    action: "▶ 去抖音看",
-    title: "抖音图文爆款《我还是留子+艺术生，buff 叠满了》（光与夜之恋）",
-    short: "光与夜·图文爆款①",
+    group: "dy",
+    dycat: "游戏-图文",
+    theme: "b",
+    art: "IMG",
+    action: "▶ 查看爆款列表",
+    title: "抖音爆款合集 · 游戏图文（3 条）",
+    short: "游戏图文爆款",
     role: "个人抖音号「恐怖国王饼」",
     year: "2025",
-    badge: "2.9万+ 点赞",
+    badge: "最高 2.9万+ 点赞",
     summary:
-      "以「留子 + 艺术生」双重身份梗切入《光与夜之恋》玩家圈层的图文爆款：身份共鸣 + 圈层梗让内容快速传播，收获 2.9 万+ 点赞。",
+      "个人抖音号「恐怖国王饼」的游戏类图文爆款合集：以《光与夜之恋》角色与玩家圈层梗切入，单条最高收获 2.9 万+ 点赞。点击下方列表即可逐条跳转抖音查看。",
     bullets: [
+      "3 条游戏图文爆款 · 最高 2.9万+ 点赞",
       "圈层梗 + 身份共鸣选题",
-      "图文形式快速产出爆款",
       "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
     ],
-    media: { type: "link", href: "https://v.douyin.com/t-uumqGBnAo/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 2.9万+ 点赞" },
+    media: {
+      type: "links",
+      items: [
+        { badge: "2.9万+ 点赞", name: "光与夜之恋《我还是留子+艺术生，buff 叠满了》", href: "https://v.douyin.com/t-uumqGBnAo/" },
+        { badge: "2.9万+ 点赞", name: "光与夜之恋《哥好帅，光头你能不能再让他上一次男刊》", href: "https://v.douyin.com/e5-zeQGcMtA/" },
+        { badge: "3000+ 点赞", name: "萧逸 角色向图文", href: "https://v.douyin.com/1np4m3rsqu0/" },
+      ],
+    },
   },
   {
-    id: "dy-love2",
+    id: "dy-vid",
     cat: "account",
     catLabel: "账号运营",
-    theme: "b",
-    art: "MALE",
-    action: "▶ 去抖音看",
-    title: "抖音图文爆款《哥好帅，光头你能不能再让他上一次男刊》（光与夜之恋）",
-    short: "光与夜·图文爆款②",
-    role: "个人抖音号「恐怖国王饼」",
-    year: "2025",
-    badge: "2.9万+ 点赞",
-    summary:
-      "以角色颜值向「玩梗吐槽」切入《光与夜之恋》玩家圈层，粉丝向内容引发大量共鸣与转发，收获 2.9 万+ 点赞。",
-    bullets: [
-      "粉丝向玩梗吐槽选题",
-      "精准命中角色粉情绪点",
-      "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
-    ],
-    media: { type: "link", href: "https://v.douyin.com/e5-zeQGcMtA/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 2.9万+ 点赞" },
-  },
-  {
-    id: "dy-xiaoyi-img",
-    cat: "account",
-    catLabel: "账号运营",
-    theme: "a",
-    art: "XIAO",
-    action: "▶ 去抖音看",
-    title: "抖音图文爆款「萧逸」角色向内容",
-    short: "萧逸·图文爆款",
-    role: "个人抖音号「恐怖国王饼」",
-    year: "2025",
-    badge: "3000+ 点赞",
-    summary:
-      "单角色向图文内容，精准命中乙游玩家对角色「萧逸」的喜爱，收获 3000+ 点赞。",
-    bullets: [
-      "单角色向内容创作",
-      "精准命中角色粉圈层",
-      "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
-    ],
-    media: { type: "link", href: "https://v.douyin.com/1np4m3rsqu0/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 3000+ 点赞" },
-  },
-  {
-    id: "dy-xiaoyi-vid",
-    cat: "account",
-    catLabel: "账号运营",
-    theme: "e",
-    art: "YI",
-    action: "▶ 去抖音看",
-    title: "抖音视频爆款「萧逸」角色向内容",
-    short: "萧逸·视频爆款",
-    role: "个人抖音号「恐怖国王饼」",
-    year: "2025",
-    badge: "300+ 点赞",
-    summary:
-      "角色向视频内容，用卡点与情绪表达呈现角色魅力，收获 300+ 点赞。",
-    bullets: [
-      "角色向卡点视频",
-      "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
-    ],
-    media: { type: "link", href: "https://v.douyin.com/Ijhu6cFDB2w/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 300+ 点赞" },
-  },
-  {
-    id: "dy-shenxinghui",
-    cat: "account",
-    catLabel: "账号运营",
-    theme: "c",
-    art: "XING",
-    action: "▶ 去抖音看",
-    title: "抖音视频爆款「好帅……沈星回」",
-    short: "沈星回·视频爆款",
-    role: "个人抖音号「恐怖国王饼」",
-    year: "2025",
-    badge: "800+ 点赞",
-    summary:
-      "以角色「沈星回」颜值向内容制作视频，收获 800+ 点赞，是游戏向内容里数据较好的一条。",
-    bullets: [
-      "角色颜值向内容",
-      "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
-    ],
-    media: { type: "link", href: "https://v.douyin.com/r9b5Erdk_lk/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 800+ 点赞" },
-  },
-  {
-    id: "dy-rustlake",
-    cat: "account",
-    catLabel: "账号运营",
-    theme: "b",
-    art: "LAKE",
-    action: "▶ 去抖音看",
-    title: "抖音剧情视频《锈湖》同人向内容",
-    short: "锈湖·剧情视频",
-    role: "个人抖音号「恐怖国王饼」",
-    year: "2025",
-    badge: "100+ 点赞",
-    summary:
-      "《锈湖》系列同人剧情视频，用游戏叙事氛围打动同好玩家，收获 100+ 点赞。",
-    bullets: [
-      "游戏同人剧情创作",
-      "氛围向叙事表达",
-      "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
-    ],
-    media: { type: "link", href: "https://v.douyin.com/iPdooUE5Y2g/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 100+ 点赞" },
-  },
-  {
-    id: "dy-crab",
-    cat: "account",
-    catLabel: "账号运营",
+    group: "dy",
+    dycat: "游戏-视频",
     theme: "d",
-    art: "CRAB",
-    action: "▶ 去抖音看",
-    title: "抖音游戏攻略《无伤拿下帝王蟹》（饥荒联机版）",
-    short: "饥荒·帝王蟹攻略",
+    art: "VID",
+    action: "▶ 查看爆款列表",
+    title: "抖音爆款合集 · 游戏视频（5 条）",
+    short: "游戏视频爆款",
     role: "个人抖音号「恐怖国王饼」",
     year: "2025",
-    badge: "100+ 点赞",
+    badge: "最高 800+ 点赞",
     summary:
-      "游戏技巧攻略向视频，分享「指南针卡位法」实用打法，为玩家提供真实价值，收获 100+ 点赞。",
+      "个人抖音号「恐怖国王饼」的游戏类视频爆款合集：涵盖《饥荒联机版》攻略、角色向卡点与游戏同人剧情，单条最高收获 800+ 点赞。点击下方列表即可逐条跳转抖音查看。",
     bullets: [
-      "实用攻略向内容",
-      "「指南针卡位法」打法分享",
+      "5 条游戏视频爆款 · 最高 800+ 点赞",
+      "攻略 / 卡点 / 同人剧情",
       "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
     ],
-    media: { type: "link", href: "https://v.douyin.com/ZKx9HlsE5Jk/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 100+ 点赞" },
+    media: {
+      type: "links",
+      items: [
+        { badge: "300+ 点赞", name: "《谢谢猪哥》饥荒联机版", href: "https://v.douyin.com/xRRLnQ8Ktjc/" },
+        { badge: "300+ 点赞", name: "萧逸 角色向视频", href: "https://v.douyin.com/Ijhu6cFDB2w/" },
+        { badge: "800+ 点赞", name: "沈星回《好帅……》", href: "https://v.douyin.com/r9b5Erdk_lk/" },
+        { badge: "100+ 点赞", name: "锈湖同人剧情视频", href: "https://v.douyin.com/iPdooUE5Y2g/" },
+        { badge: "100+ 点赞", name: "《无伤拿下帝王蟹》饥荒攻略", href: "https://v.douyin.com/ZKx9HlsE5Jk/" },
+      ],
+    },
   },
   {
-    id: "dy-meme1",
+    id: "dy-meme",
     cat: "account",
     catLabel: "账号运营",
+    group: "dy",
+    dycat: "玩梗",
     theme: "a",
     art: "MEME",
-    action: "▶ 去抖音看",
-    title: "抖音玩梗视频爆款①",
-    short: "玩梗爆款①",
+    action: "▶ 查看爆款列表",
+    title: "抖音爆款合集 · 玩梗（3 条）",
+    short: "玩梗爆款",
     role: "个人抖音号「恐怖国王饼」",
     year: "2025",
-    badge: "100+ 点赞",
+    badge: "最高 3万+ 点赞",
     summary:
-      "娱乐玩梗向短视频，用网络热梗创作轻松内容，展现对年轻人语境的把握，收获 100+ 点赞。",
+      "个人抖音号「恐怖国王饼」的玩梗爆款合集：紧跟热点、网感在线，其中《皇后杀了皇后，AI 杀了 AI》收获 160 万+ 播放、3.4 万点赞。点击下方列表即可逐条跳转抖音查看。",
     bullets: [
-      "网络热梗内容创作",
-      "轻松娱乐向表达",
+      "3 条玩梗爆款 · 最高 160万+ 播放 / 3.4万 点赞",
+      "热点借势 + 网络热梗",
       "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
     ],
-    media: { type: "link", href: "https://v.douyin.com/DstHahBB5vk/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 100+ 点赞" },
-  },
-  {
-    id: "dy-meme2",
-    cat: "account",
-    catLabel: "账号运营",
-    theme: "e",
-    art: "FUN",
-    action: "▶ 去抖音看",
-    title: "抖音玩梗视频爆款②",
-    short: "玩梗爆款②",
-    role: "个人抖音号「恐怖国王饼」",
-    year: "2025",
-    badge: "300+ 点赞",
-    summary:
-      "娱乐玩梗向短视频，节奏轻快、网感在线，收获 300+ 点赞。",
-    bullets: [
-      "网络热梗内容创作",
-      "节奏轻快的娱乐向表达",
-      "个人抖音号「恐怖国王饼」发布",
-      "▶ 前往抖音查看",
-    ],
-    media: { type: "link", href: "https://v.douyin.com/WGBzaxyRwfU/", label: "▶ 前往抖音观看", hint: "恐怖国王饼 · 抖音 · 300+ 点赞" },
+    media: {
+      type: "links",
+      items: [
+        { badge: "160万+ 播放 · 3.4万 点赞", name: "《皇后杀了皇后，AI 杀了 AI》", href: "https://v.douyin.com/z5Ul49JQQKg/" },
+        { badge: "100+ 点赞", name: "玩梗视频①", href: "https://v.douyin.com/DstHahBB5vk/" },
+        { badge: "300+ 点赞", name: "玩梗视频②", href: "https://v.douyin.com/WGBzaxyRwfU/" },
+      ],
+    },
   },
 
   {
@@ -687,6 +552,18 @@ function coverHTML(w, index) {
     (mediaList(w.media).some((m) => m.type === "video" || (m.type === "link" && (VIDEO_LINKS[m.id] || m.href)))
       ? "▶ 观看作品"
       : "查看详情 →");
+  const isDy = w.group === "dy";
+  const catLabel = isDy ? w.dycat : w.catLabel;
+  const titleEl = isDy ? "" : `<h3 class="cover-title">${w.short}</h3>`;
+  let subEl = "";
+  if (!isDy) {
+    subEl = `<p class="cover-sub">${w.year} · ${w.role.split("·")[0].trim()}</p>`;
+  } else {
+    const mm0 = Array.isArray(w.media) ? w.media[0] : w.media;
+    if (mm0 && mm0.type === "links" && mm0.items) {
+      subEl = `<p class="cover-sub">合集 · ${mm0.items.length} 条爆款</p>`;
+    }
+  }
 
   if (w.coverImg) {
     return `
@@ -695,8 +572,8 @@ function coverHTML(w, index) {
         <div class="cover-img-shade"></div>
         <span class="cover-index">${String(index + 1).padStart(2, "0")}</span>
         ${w.badge ? `<span class="cover-badge">${w.badge}</span>` : ""}
-        <span class="cover-cat">${w.catLabel}</span>
-        <h3 class="cover-title">${w.short}</h3>
+        <span class="cover-cat">${catLabel}</span>
+        ${titleEl}
         <p class="cover-sub">${w.year}</p>
         <span class="cover-action">${actionLabel}</span>
       </div>`;
@@ -707,9 +584,9 @@ function coverHTML(w, index) {
       ${art}
       <span class="cover-index">${String(index + 1).padStart(2, "0")}</span>
       ${w.badge ? `<span class="cover-badge">${w.badge}</span>` : ""}
-      <span class="cover-cat">${w.catLabel}</span>
-      <h3 class="cover-title">${w.short}</h3>
-      <p class="cover-sub">${w.year} · ${w.role.split("·")[0].trim()}</p>
+      <span class="cover-cat">${catLabel}</span>
+      ${titleEl}
+      ${subEl}
       <span class="cover-action">${actionLabel}</span>
     </div>`;
 }
@@ -717,26 +594,148 @@ function coverHTML(w, index) {
 const HOT_CATS = ["account", "game", "plan"];
 function cardHTML(w, index) {
   const isHot = HOT_CATS.includes(w.cat);
-  return `
-    <article class="work-card${isHot ? " work-card--hot" : ""}" data-id="${w.id}" data-cat="${w.cat}" role="listitem">
-      <button class="work-card-btn" data-open="${w.id}" aria-label="查看作品：${w.title}">
-        ${coverHTML(w, index)}
-      </button>
+  const isDy = w.group === "dy";
+  const info = isDy
+    ? ""
+    : `
       <div class="card-meta">
         <span class="card-cat">${isHot ? "★ " : ""}${w.catLabel}</span>
         <span class="card-year">${w.year}</span>
       </div>
       <h3 class="card-title">${w.title}</h3>
-      <p class="card-role">${w.role}</p>
+      <p class="card-role">${w.role}</p>`;
+  return `
+    <article class="work-card${isHot ? " work-card--hot" : ""}${isDy ? " work-card--tile" : ""}" data-id="${w.id}" data-cat="${w.cat}" role="listitem">
+      <button class="work-card-btn" data-open="${w.id}" aria-label="查看作品：${w.title}">
+        ${coverHTML(w, index)}
+      </button>
+      ${info}
     </article>`;
 }
 
-const CAT_ORDER = { account: 0, game: 1, plan: 2, video: 3, pr: 4, design: 5, copy: 6, research: 7 };
+const CAT_ORDER = { account: 0, game: 1, plan: 2, video: 3, design: 4, copy: 5, research: 6, pr: 7 };
+let accountSub = null; // 账号运营分区：null 未选 / xhs 小红书 / dy 抖音
+let dyCat = "all";     // 抖音爆款方向：all / 游戏-图文 / 游戏-视频 / 玩梗
+
+function updateSubPath() {
+  const p = document.getElementById("subPath");
+  const t = document.getElementById("subPanelTitle");
+  const back = document.getElementById("subBack");
+  if (p) {
+    let s = "全部 › 账号运营";
+    if (accountSub === "xhs") s += " › 小红书账号运营";
+    else if (accountSub === "dy") s += " › 抖音往期爆款" + (dyCat !== "all" ? " › " + dyCat : "");
+    p.textContent = s;
+  }
+  if (t) {
+    t.textContent =
+      accountSub === "xhs" ? "📕 小红书账号运营"
+      : accountSub === "dy" ? "🎵 抖音往期爆款"
+      : "📂 账号运营 · 选择分区";
+  }
+  if (back) back.hidden = !accountSub;
+}
+
+const DY_TOTALS = {};
+works.filter((w) => w.group === "dy").forEach((w) => {
+  const mm0 = Array.isArray(w.media) ? w.media[0] : w.media;
+  const n = mm0 && mm0.type === "links" && mm0.items ? mm0.items.length : 1;
+  DY_TOTALS[w.dycat] = (DY_TOTALS[w.dycat] || 0) + n;
+});
+const DY_ALL = Object.values(DY_TOTALS).reduce((a, b) => a + b, 0);
+function applyDyCounts() {
+  document.querySelectorAll(".sub-filter[data-dycat]").forEach((f) => {
+    const c = f.dataset.dycat === "all" ? DY_ALL : DY_TOTALS[f.dataset.dycat] || 0;
+    const label = f.dataset.dycat === "all" ? "全部" : f.dataset.dycat;
+    f.textContent = `${label} · ${c} 条`;
+  });
+}
+applyDyCounts();
+
+function partitionCardsHTML() {
+  return `
+    <button class="partition-card" data-sub="xhs" type="button">
+      <span class="pc-icon"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#FF3D81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20"/><path d="M9 7.5h6"/></svg></span>
+      <span class="pc-name">小红书账号运营</span>
+      <span class="pc-desc">持续运营中 · 累计 13.7K 赞藏<br>单篇笔记最高 4万+ 浏览</span>
+      <span class="pc-count">1 个作品</span>
+      <span class="pc-go">进入查看 →</span>
+    </button>
+    <button class="partition-card pc-dy" data-sub="dy" type="button">
+      <span class="pc-icon"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#22D3EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
+      <span class="pc-name">抖音往期爆款</span>
+      <span class="pc-desc">3 个合集 · 11 条爆款 · 最高 3.4万 点赞<br>游戏-图文 / 游戏-视频 / 玩梗</span>
+      <span class="pc-count">3 个合集</span>
+      <span class="pc-go">进入查看 →</span>
+    </button>`;
+}
+
+function renderPartitionCards() {
+  grid.innerHTML = partitionCardsHTML();
+  const wte = document.getElementById("workTotal");
+  const wtee = document.getElementById("workTotalEnd");
+  if (wte) wte.textContent = 0;
+  if (wtee) wtee.textContent = 0;
+  const wc = document.getElementById("workCount");
+  if (wc) wc.style.display = "none";
+  const we = document.querySelector(".work-end");
+  if (we) we.style.display = "none";
+  updateSubPath();
+  grid.querySelectorAll(".partition-card").forEach((el) => {
+    el.addEventListener("click", () => {
+      accountSub = el.dataset.sub;
+      dyCat = "all";
+      if (subFilters) {
+        subFilters.querySelectorAll(".sub-filter[data-dycat]").forEach((f) => f.classList.toggle("is-active", f.dataset.dycat === "all"));
+        if (subRow2) subRow2.hidden = accountSub !== "dy";
+      }
+      renderGrid("account");
+      reanimateGrid();
+    });
+  });
+}
+
+const CAT_PLACEHOLDER = `
+  <div class="grid-placeholder">
+    <p class="gp-icon"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#9A9AA6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 3h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></p>
+    <p class="gp-text">点击上方分类即可查看</p>
+    <p class="gp-sub">账号运营 · 独立游戏 · 策划 · 视频类 · 平面设计 · 广告文案 · 市场调研 · 公关</p>
+  </div>`;
+
 function renderGrid(filter) {
-  const list =
-    filter === "all"
-      ? [...works].sort((a, b) => (CAT_ORDER[a.cat] ?? 9) - (CAT_ORDER[b.cat] ?? 9))
-      : works.filter((w) => w.cat === filter);
+  let list;
+  if (filter == null) {
+    grid.innerHTML = CAT_PLACEHOLDER;
+    const wcEl = document.getElementById("workCount");
+    if (wcEl) wcEl.style.display = "none";
+    const weEl = document.querySelector(".work-end");
+    if (weEl) weEl.style.display = "none";
+    const wteEl = document.getElementById("workTotal");
+    const wteeEl = document.getElementById("workTotalEnd");
+    if (wteEl) wteEl.textContent = 0;
+    if (wteeEl) wteeEl.textContent = 0;
+    updateSubPath();
+    return;
+  }
+  if (filter === "all") {
+    list = [...works].sort((a, b) => (CAT_ORDER[a.cat] ?? 9) - (CAT_ORDER[b.cat] ?? 9));
+  } else if (filter === "account") {
+    if (!accountSub) {
+      renderPartitionCards();
+      return;
+    }
+    list = works.filter((w) => w.cat === "account" && w.group === accountSub);
+    if (accountSub === "dy" && dyCat !== "all") {
+      list = list.filter((w) => w.dycat === dyCat);
+    }
+  } else {
+    list = works.filter((w) => w.cat === filter);
+  }
+  updateSubPath();
+  const workCountEl = document.getElementById("workCount");
+  if (workCountEl) workCountEl.style.display = "";
+  const workEndEl = document.querySelector(".work-end");
+  if (workEndEl) workEndEl.style.display = "";
   grid.innerHTML = list.map((w, i) => cardHTML(w, i)).join("");
   const workTotalEl = document.getElementById("workTotal");
   const workTotalEndEl = document.getElementById("workTotalEnd");
@@ -776,14 +775,10 @@ function renderGrid(filter) {
    分类筛选
    ------------------------------------------------------------ */
 const filters = document.getElementById("filters");
-filters.addEventListener("click", (e) => {
-  const btn = e.target.closest(".filter");
-  if (!btn) return;
-  filters.querySelectorAll(".filter").forEach((f) => {
-    f.classList.toggle("is-active", f === btn);
-    f.setAttribute("aria-selected", f === btn ? "true" : "false");
-  });
-  renderGrid(btn.dataset.filter);
+const subFilters = document.getElementById("subFilters");
+const subRow2 = document.getElementById("subRow2");
+
+function reanimateGrid() {
   requestAnimationFrame(() => {
     grid.querySelectorAll(".work-card").forEach((el) => {
       el.style.animation = "none";
@@ -791,7 +786,55 @@ filters.addEventListener("click", (e) => {
       el.style.animation = "";
     });
   });
+}
+
+filters.addEventListener("click", (e) => {
+  const btn = e.target.closest(".filter");
+  if (!btn) return;
+  filters.querySelectorAll(".filter").forEach((f) => {
+    f.classList.toggle("is-active", f === btn);
+    f.setAttribute("aria-selected", f === btn ? "true" : "false");
+  });
+  const isAccount = btn.dataset.filter === "account";
+  if (subFilters) {
+    subFilters.hidden = !isAccount;
+    if (isAccount) {
+      // 每次进入账号运营都重置：不预选任何分区，需用户主动选择
+      accountSub = null;
+      dyCat = "all";
+      subFilters.querySelectorAll(".sub-filter[data-dycat]").forEach((f) => f.classList.toggle("is-active", f.dataset.dycat === "all"));
+      if (subRow2) subRow2.hidden = true;
+    }
+  }
+  renderGrid(btn.dataset.filter);
+  reanimateGrid();
 });
+
+/* 账号运营 二级面板：抖音方向筛选 + 返回分区 */
+if (subFilters) {
+  subFilters.addEventListener("click", (e) => {
+    const b2 = e.target.closest(".sub-filter[data-dycat]");
+    if (b2) {
+      dyCat = b2.dataset.dycat;
+      subFilters.querySelectorAll(".sub-filter[data-dycat]").forEach((f) => {
+        f.classList.toggle("is-active", f === b2);
+      });
+      renderGrid("account");
+      reanimateGrid();
+    }
+  });
+  const subBack = document.getElementById("subBack");
+  if (subBack) {
+    subBack.addEventListener("click", () => {
+      accountSub = null;
+      dyCat = "all";
+      subFilters.querySelectorAll(".sub-filter[data-dycat]").forEach((f) => f.classList.toggle("is-active", f.dataset.dycat === "all"));
+      if (subRow2) subRow2.hidden = true;
+      renderGrid("account");
+      reanimateGrid();
+    });
+  }
+}
 
 /* ------------------------------------------------------------
    作品弹窗
@@ -812,7 +855,8 @@ function mediaItemHTML(w, m) {
     return `<figure><img src="${m.src}" alt="${w.title}"><figcaption>${m.caption || ""}</figcaption></figure>`;
   }
   if (m.type === "pdf") {
-    return `<iframe src="${m.file}" title="${w.title}"></iframe>`;
+    return `<iframe src="${m.file}" title="${w.title}"></iframe>
+      <a class="modal-pdf-fallback" href="${m.file}" target="_blank" rel="noopener">📄 若预览空白，请在新窗口打开 PDF ↗</a>`;
   }
   if (m.type === "download") {
     return `<a class="modal-media-link" href="${m.file}" download>
@@ -824,6 +868,15 @@ function mediaItemHTML(w, m) {
   if (m.type === "content") {
     const paras = m.text.split("\n").map((t) => t.trim()).filter(Boolean).map((t) => `<p>${t}</p>`).join("");
     return `<div class="modal-copy"><h4>${m.title || "📄 完整文案"}</h4><div class="modal-copy-body">${paras}</div></div>`;
+  }
+  if (m.type === "links") {
+    const rows = (m.items || []).map((it) => `
+      <a class="modal-link-row" href="${it.href}" target="_blank" rel="noopener">
+        <span class="mlr-badge">${it.badge}</span>
+        <span class="mlr-name">${it.name}</span>
+        <span class="mlr-go">去抖音看 ↗</span>
+      </a>`).join("");
+    return `<div class="modal-links">${rows}</div>`;
   }
   if (m.type === "link") {
     const href = m.href || VIDEO_LINKS[m.id];
@@ -931,6 +984,7 @@ function openPdfPreview(src, title) {
         <button class="pdf-overlay-close" data-close>✕ 关闭</button>
       </div>
       <iframe src="${src}" title="${title || "作品预览"}"></iframe>
+      <a class="modal-pdf-fallback" href="${src}" target="_blank" rel="noopener">📄 若预览空白，请在新窗口打开 PDF ↗</a>
     </div>`;
   document.body.appendChild(ov);
   document.body.style.overflow = "hidden";
@@ -970,6 +1024,8 @@ document.querySelectorAll(".reveal").forEach((el, i) => {
   el.style.setProperty("--d", `${Math.min(i % 6, 4) * 0.06}s`);
   revealObserver.observe(el);
 });
+
+
 
 /* ------------------------------------------------------------
    数字滚动
@@ -1011,14 +1067,32 @@ const progressBar = document.getElementById("progressBar");
 const navBurger = document.getElementById("navBurger");
 const navLinks = document.getElementById("navLinks");
 
+const sectionIds = ["work", "method", "about", "experience", "skills", "contact"];
+const navLinkEls = Array.from(document.querySelectorAll(".nav-link"));
+
 function onScroll() {
   nav.classList.toggle("scrolled", window.scrollY > 40);
   const h = document.documentElement;
   const max = h.scrollHeight - h.clientHeight;
   progressBar.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : "0%";
+
+  // 滚动高亮当前板块
+  if (window.scrollY < 80) {
+    navLinkEls.forEach((a) => a.classList.remove("is-active"));
+  } else {
+    let current = sectionIds[0];
+    const probe = window.scrollY + window.innerHeight * 0.35;
+    for (const id of sectionIds) {
+      const sec = document.getElementById(id);
+      if (sec && sec.offsetTop <= probe) current = id;
+    }
+    navLinkEls.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === "#" + current));
+  }
 }
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
+
+
 
 navBurger.addEventListener("click", () => {
   const open = navLinks.classList.toggle("open");
@@ -1034,7 +1108,7 @@ navLinks.querySelectorAll("a").forEach((a) =>
 /* ------------------------------------------------------------
    首次渲染
    ------------------------------------------------------------ */
-renderGrid("all");
+renderGrid(null);
 
 /* ------------------------------------------------------------
    Hero 鼠标光效（跟随光标的一团荧光）
@@ -1048,6 +1122,8 @@ if (heroEl && FINE_POINTER && !REDUCED_MOTION) {
     heroEl.style.setProperty("--my", `${(((e.clientY - r.top) / r.height) * 100).toFixed(2)}%`);
   });
 }
+
+
 
 /* ------------------------------------------------------------
    Hero 打字机（循环输出一句话）

@@ -24,12 +24,12 @@
 <header class="nav" id="nav">
   <a class="nav-logo" href="#top">周雨悦<span class="nav-logo-dot">.</span></a>
   <nav class="nav-links" id="navLinks" aria-label="主导航">
-    <a href="#work" class="nav-link">作品</a>
-    <a href="#method" class="nav-link">方法论</a>
-    <a href="#about" class="nav-link">关于</a>
-    <a href="#experience" class="nav-link">经历</a>
-    <a href="#skills" class="nav-link">技能</a>
-    <a href="#contact" class="nav-link">联系</a>
+    <a href="#work" class="nav-link"><span class="nav-num">01</span>作品</a>
+    <a href="#method" class="nav-link"><span class="nav-num">02</span>方法论</a>
+    <a href="#about" class="nav-link"><span class="nav-num">03</span>关于</a>
+    <a href="#experience" class="nav-link"><span class="nav-num">04</span>经历</a>
+    <a href="#skills" class="nav-link"><span class="nav-num">05</span>技能</a>
+    <a href="#contact" class="nav-link"><span class="nav-num">06</span>联系</a>
     <a class="nav-resume" href="assets/pdf/简历.pdf" download="周雨悦-简历.pdf">下载简历</a>
   </nav>
   <button class="nav-burger" id="navBurger" aria-label="打开菜单" aria-expanded="false">
@@ -115,15 +115,32 @@
     </div>
 
     <div class="filters reveal" id="filters" role="tablist" aria-label="作品分类">
-      <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">全部</button>
       <button class="filter filter-hot" data-filter="account" role="tab" aria-selected="false">账号运营</button>
       <button class="filter filter-hot" data-filter="game" role="tab" aria-selected="false">独立游戏</button>
       <button class="filter filter-hot" data-filter="plan" role="tab" aria-selected="false">策划</button>
       <button class="filter" data-filter="video" role="tab" aria-selected="false">视频类</button>
-      <button class="filter" data-filter="pr" role="tab" aria-selected="false">公关</button>
       <button class="filter" data-filter="design" role="tab" aria-selected="false">平面设计</button>
       <button class="filter" data-filter="copy" role="tab" aria-selected="false">广告文案</button>
       <button class="filter" data-filter="research" role="tab" aria-selected="false">市场调研</button>
+      <button class="filter" data-filter="pr" role="tab" aria-selected="false">公关</button>
+    </div>
+
+    <!-- 账号运营：分区面板（选择分区 → 选择方向） -->
+    <div class="sub-filters" id="subFilters" hidden>
+      <div class="sub-panel">
+        <div class="sub-panel-top">
+          <button class="sub-back" id="subBack" type="button" hidden>← 返回分区</button>
+          <span class="sub-panel-title" id="subPanelTitle">📂 账号运营 · 选择分区</span>
+          <span class="sub-panel-path" id="subPath">全部 › 账号运营</span>
+        </div>
+        <div class="sub-row" id="subRow2" hidden>
+          <span class="sub-row-label">方向</span>
+          <button class="sub-filter is-active" data-dycat="all" type="button">全部</button>
+          <button class="sub-filter" data-dycat="游戏-图文" type="button">游戏-图文</button>
+          <button class="sub-filter" data-dycat="游戏-视频" type="button">游戏-视频</button>
+          <button class="sub-filter" data-dycat="玩梗" type="button">玩梗</button>
+        </div>
+      </div>
     </div>
 
     <p class="work-count" id="workCount">共 <span id="workTotal">0</span> 个作品</p>
