@@ -1767,7 +1767,7 @@ a.is-loading {
 
 /* 分区选择大卡片（小红书 / 抖音） */
 .partition-card {
-  grid-column: span 6;
+  grid-column: span 4;
   position: relative;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1856,4 +1856,27 @@ a.is-loading {
 @media (max-width: 640px) {
   .modal-link-row { flex-wrap: wrap; gap: 8px; }
   .mlr-go { margin-left: auto; }
+}
+
+
+/* 工作账号：圆形头像封面 */
+.cover--avatar {
+  align-items: center; justify-content: center; text-align: center;
+  padding: 30px 24px;
+}
+.cover--avatar .cover-cat { top: 16px; left: 16px; }
+.cover--avatar .cover-badge { top: 16px; right: 16px; }
+.cover-avatar {
+  width: 104px; height: 104px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  margin: 8px auto 6px;
+  position: relative; z-index: 2;
+}
+.cover--avatar .cover-title { margin-top: 4px; }
+.cover--avatar .cover-action { align-self: center; }
+@media (max-width: 640px) {
+  .cover-avatar { width: 84px; height: 84px; }
 }

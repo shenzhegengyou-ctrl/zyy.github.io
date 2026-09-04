@@ -179,6 +179,123 @@ const works = [
 
 
   {
+    id: "xhs-work-mg",
+    cat: "account",
+    catLabel: "账号运营",
+    group: "xhs-work",
+    theme: "e",
+    avatarImg: "assets/img/avatar-work-mg.png",
+    action: "📕 查看主页",
+    title: "小红书工作账号 · 美工今天不加班",
+    short: "美工今天不加班",
+    role: "工作账号 · 任职期间运营",
+    year: "2026",
+    badge: "工作账号",
+    summary:
+      "任职期间负责运营的小红书工作账号「美工今天不加班」：结合账号定位策划并发布内容，配合业务目标提升曝光与互动，验证了从内容策划到账号运营的落地能力。",
+    bullets: [
+      "小红书工作账号 · 任职期间运营",
+      "结合账号定位策划内容、发布并复盘",
+      "📕 前往小红书主页查看",
+    ],
+    media: { type: "link", href: "https://xhslink.cn/m/1jWwdUrLQoP", label: "📕 前往小红书主页", hint: "美工今天不加班 · 小红书" },
+  },
+
+
+  {
+    id: "xhs-work-manman",
+    cat: "account",
+    catLabel: "账号运营",
+    group: "xhs-work",
+    theme: "d",
+    avatarImg: "assets/img/avatar-work-podhome.jpg",
+    action: "📕 查看主页",
+    title: "小红书工作账号 · POD家居设计-满满",
+    short: "POD家居设计-满满",
+    role: "工作账号 · 任职期间运营",
+    year: "2026",
+    badge: "183 赞藏",
+    summary:
+      "任职期间负责运营的小红书工作账号「POD家居设计-满满」：围绕家居类 POD 设计内容策划发布，累计收获 183 次赞与收藏。",
+    bullets: [
+      "小红书工作账号 · 任职期间运营",
+      "家居类 POD 设计内容策划与发布",
+      "累计收获 183 次赞与收藏",
+      "📕 前往小红书主页查看",
+    ],
+    media: { type: "link", href: "https://xhslink.cn/o/A5z4sbsXLlg", label: "📕 前往小红书主页", hint: "POD家居设计-满满 · 小红书" },
+  },
+  {
+    id: "xhs-work-yuyue",
+    cat: "account",
+    catLabel: "账号运营",
+    group: "xhs-work",
+    theme: "c",
+    avatarImg: "assets/img/avatar-work-yuyue.jpg",
+    action: "📕 查看主页",
+    title: "小红书工作账号 · POD印花设计师-予月",
+    short: "POD印花设计师-予月",
+    role: "工作账号 · 任职期间运营",
+    year: "2026",
+    badge: "758 赞藏",
+    summary:
+      "任职期间负责运营的小红书工作账号「POD印花设计师-予月」：围绕印花类 POD 设计内容策划发布，累计收获 758 次赞与收藏。",
+    bullets: [
+      "小红书工作账号 · 任职期间运营",
+      "印花类 POD 设计内容策划与发布",
+      "累计收获 758 次赞与收藏",
+      "📕 前往小红书主页查看",
+    ],
+    media: { type: "link", href: "https://xhslink.cn/o/5cDWJg49AWe", label: "📕 前往小红书主页", hint: "POD印花设计师-予月 · 小红书" },
+  },
+  {
+    id: "xhs-work-huahua",
+    cat: "account",
+    catLabel: "账号运营",
+    group: "xhs-work",
+    theme: "e",
+    avatarImg: "assets/img/avatar-work-huahua.jpg",
+    action: "📕 查看主页",
+    title: "小红书工作账号 · 跨境POD设计-花花",
+    short: "跨境POD设计-花花",
+    role: "工作账号 · 任职期间运营",
+    year: "2026",
+    badge: "1938 赞藏",
+    summary:
+      "任职期间负责运营的小红书工作账号「跨境POD设计-花花」：围绕跨境 POD 设计内容策划发布，累计收获 1938 次赞与收藏。",
+    bullets: [
+      "小红书工作账号 · 任职期间运营",
+      "跨境 POD 设计内容策划与发布",
+      "累计收获 1938 次赞与收藏",
+      "📕 前往小红书主页查看",
+    ],
+    media: { type: "link", href: "https://xhslink.cn/o/4wPML174P3z", label: "📕 前往小红书主页", hint: "跨境POD设计-花花 · 小红书" },
+  },
+  {
+    id: "xhs-work-jingzhe",
+    cat: "account",
+    catLabel: "账号运营",
+    group: "xhs-work",
+    theme: "b",
+    avatarImg: "assets/img/avatar-work-jingzhe.jpg",
+    action: "📕 查看主页",
+    title: "小红书工作账号 · 跨境POD设计-惊蛰",
+    short: "跨境POD设计-惊蛰",
+    role: "工作账号 · 任职期间运营",
+    year: "2026",
+    badge: "2785 赞藏",
+    summary:
+      "任职期间负责运营的小红书工作账号「跨境POD设计-惊蛰」：围绕跨境 POD 设计内容策划发布，累计收获 2785 次赞与收藏，是工作矩阵中数据最好的一批账号之一。",
+    bullets: [
+      "小红书工作账号 · 任职期间运营",
+      "跨境 POD 设计内容策划与发布",
+      "累计收获 2785 次赞与收藏",
+      "📕 前往小红书主页查看",
+    ],
+    media: { type: "link", href: "https://xhslink.cn/o/4BrKYtcMGsm", label: "📕 前往小红书主页", hint: "跨境POD设计-惊蛰 · 小红书" },
+  },
+
+  {
     id: "dy-img",
     cat: "account",
     catLabel: "账号运营",
@@ -565,6 +682,17 @@ function coverHTML(w, index) {
     }
   }
 
+  if (w.avatarImg) {
+    return `
+      <div class="cover cover--avatar" data-theme="${w.theme || "e"}">
+        ${w.badge ? `<span class="cover-badge">${w.badge}</span>` : ""}
+        <span class="cover-cat">${catLabel}</span>
+        <img class="cover-avatar" src="${w.avatarImg}" alt="${w.title}头像" loading="lazy">
+        <h3 class="cover-title">${w.short}</h3>
+        <p class="cover-sub">${w.year}</p>
+        <span class="cover-action">${actionLabel}</span>
+      </div>`;
+  }
   if (w.coverImg) {
     return `
       <div class="cover cover--img">
@@ -623,13 +751,15 @@ function updateSubPath() {
   const back = document.getElementById("subBack");
   if (p) {
     let s = "全部 › 账号运营";
-    if (accountSub === "xhs") s += " › 小红书账号运营";
+    if (accountSub === "xhs") s += " › 小红书 · 个人账号";
+    else if (accountSub === "xhs-work") s += " › 小红书 · 工作账号";
     else if (accountSub === "dy") s += " › 抖音往期爆款" + (dyCat !== "all" ? " › " + dyCat : "");
     p.textContent = s;
   }
   if (t) {
     t.textContent =
-      accountSub === "xhs" ? "📕 小红书账号运营"
+      accountSub === "xhs" ? "📕 小红书 · 个人账号"
+      : accountSub === "xhs-work" ? "💼 小红书 · 工作账号"
       : accountSub === "dy" ? "🎵 抖音往期爆款"
       : "📂 账号运营 · 选择分区";
   }
@@ -653,12 +783,21 @@ function applyDyCounts() {
 applyDyCounts();
 
 function partitionCardsHTML() {
+  const nXhs = works.filter((w) => w.cat === "account" && w.group === "xhs").length;
+  const nWork = works.filter((w) => w.cat === "account" && w.group === "xhs-work").length;
   return `
     <button class="partition-card" data-sub="xhs" type="button">
       <span class="pc-icon"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#FF3D81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20"/><path d="M9 7.5h6"/></svg></span>
-      <span class="pc-name">小红书账号运营</span>
+      <span class="pc-name">小红书 · 个人账号</span>
       <span class="pc-desc">持续运营中 · 累计 13.7K 赞藏<br>单篇笔记最高 4万+ 浏览</span>
-      <span class="pc-count">1 个作品</span>
+      <span class="pc-count">${nXhs} 个账号</span>
+      <span class="pc-go">进入查看 →</span>
+    </button>
+    <button class="partition-card pc-work" data-sub="xhs-work" type="button">
+      <span class="pc-icon"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#FF5A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+      <span class="pc-name">小红书 · 工作账号</span>
+      <span class="pc-desc">任职期间运营 · 美工今天不加班 等<br>与个人账号分开展示</span>
+      <span class="pc-count">${nWork} 个账号</span>
       <span class="pc-go">进入查看 →</span>
     </button>
     <button class="partition-card pc-dy" data-sub="dy" type="button">
