@@ -1880,3 +1880,28 @@ a.is-loading {
 @media (max-width: 640px) {
   .cover-avatar { width: 84px; height: 84px; }
 }
+
+/* 小红书工作账号：按公司分组标题 */
+.account-group-head {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin: 14px 0 4px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--lime);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  animation: cardIn 0.5s var(--ease) both;
+}
+.account-group-head:first-child { margin-top: 0; }
+.agh-name { font-size: 16px; font-weight: 900; color: #F6F6F0; letter-spacing: 1px; }
+.agh-period {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--lime); letter-spacing: 0.5px;
+  background: rgba(205, 255, 69, 0.1);
+  border-radius: 999px; padding: 3px 10px;
+}
+.agh-count {
+  margin-left: auto; font-size: 12px; color: var(--muted);
+  font-family: var(--font-mono);
+}

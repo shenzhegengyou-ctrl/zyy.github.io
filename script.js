@@ -183,6 +183,8 @@ const works = [
     cat: "account",
     catLabel: "账号运营",
     group: "xhs-work",
+    company: "咪咕新空",
+    companyPeriod: "2026.08 — 至今",
     theme: "e",
     avatarImg: "assets/img/avatar-work-mg.png",
     action: "📕 查看主页",
@@ -207,6 +209,8 @@ const works = [
     cat: "account",
     catLabel: "账号运营",
     group: "xhs-work",
+    company: "厦门灵图科技",
+    companyPeriod: "2026.05 — 2026.08",
     theme: "d",
     avatarImg: "assets/img/avatar-work-podhome.jpg",
     action: "📕 查看主页",
@@ -230,6 +234,8 @@ const works = [
     cat: "account",
     catLabel: "账号运营",
     group: "xhs-work",
+    company: "厦门灵图科技",
+    companyPeriod: "2026.05 — 2026.08",
     theme: "c",
     avatarImg: "assets/img/avatar-work-yuyue.jpg",
     action: "📕 查看主页",
@@ -253,6 +259,8 @@ const works = [
     cat: "account",
     catLabel: "账号运营",
     group: "xhs-work",
+    company: "厦门灵图科技",
+    companyPeriod: "2026.05 — 2026.08",
     theme: "e",
     avatarImg: "assets/img/avatar-work-huahua.jpg",
     action: "📕 查看主页",
@@ -276,6 +284,8 @@ const works = [
     cat: "account",
     catLabel: "账号运营",
     group: "xhs-work",
+    company: "厦门灵图科技",
+    companyPeriod: "2026.05 — 2026.08",
     theme: "b",
     avatarImg: "assets/img/avatar-work-jingzhe.jpg",
     action: "📕 查看主页",
@@ -796,7 +806,7 @@ function partitionCardsHTML() {
     <button class="partition-card pc-work" data-sub="xhs-work" type="button">
       <span class="pc-icon"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#FF5A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
       <span class="pc-name">小红书 · 工作账号</span>
-      <span class="pc-desc">任职期间运营 · 美工今天不加班 等<br>与个人账号分开展示</span>
+      <span class="pc-desc">咪咕新空 · 美工今天不加班<br>厦门灵图科技 · 4 个 POD 账号</span>
       <span class="pc-count">${nWork} 个账号</span>
       <span class="pc-go">进入查看 →</span>
     </button>
@@ -875,11 +885,38 @@ function renderGrid(filter) {
   if (workCountEl) workCountEl.style.display = "";
   const workEndEl = document.querySelector(".work-end");
   if (workEndEl) workEndEl.style.display = "";
-  grid.innerHTML = list.map((w, i) => cardHTML(w, i)).join("");
+
+  // 小红书 · 工作账号：按公司分组（咪咕新空在上 → 厦门灵图科技在下）
+  let html;
+  let total;
+  if (filter === "account" && accountSub === "xhs-work") {
+    const comps = ["咪咕新空", "厦门灵图科技"];
+    const workList = works.filter((w) => w.cat === "account" && w.group === "xhs-work");
+    const parts = [];
+    let idx = 0;
+    comps.forEach((comp) => {
+      const items = workList.filter((w) => w.company === comp);
+      if (!items.length) return;
+      const per = items[0].companyPeriod || "";
+      parts.push(`
+        <div class="account-group-head">
+          <span class="agh-name">${comp}</span>
+          <span class="agh-period">${per}</span>
+          <span class="agh-count">${items.length} 个账号</span>
+        </div>`);
+      items.forEach((w) => { parts.push(cardHTML(w, idx)); idx++; });
+    });
+    html = parts.join("");
+    total = workList.length;
+  } else {
+    html = list.map((w, i) => cardHTML(w, i)).join("");
+    total = list.length;
+  }
+  grid.innerHTML = html;
   const workTotalEl = document.getElementById("workTotal");
   const workTotalEndEl = document.getElementById("workTotalEnd");
-  if (workTotalEl) workTotalEl.textContent = list.length;
-  if (workTotalEndEl) workTotalEndEl.textContent = list.length;
+  if (workTotalEl) workTotalEl.textContent = total;
+  if (workTotalEndEl) workTotalEndEl.textContent = total;
 
   const cards = grid.querySelectorAll(".work-card");
   cards.forEach((el, i) => {
