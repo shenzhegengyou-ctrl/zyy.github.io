@@ -549,7 +549,7 @@ ul { list-style: none; }
 
 .about-cards {
   margin-top: clamp(40px, 6vh, 60px);
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: grid; grid-template-columns: repeat(4, 1fr);
   gap: clamp(16px, 2vw, 24px);
 }
 .about-card {
@@ -1904,4 +1904,13 @@ a.is-loading {
 .agh-count {
   margin-left: auto; font-size: 12px; color: var(--muted);
   font-family: var(--font-mono);
+}
+
+
+/* 关于我：能力卡片 4 张的响应式（平板 2 列 / 手机 1 列） */
+@media (max-width: 1024px) {
+  .about-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .about-cards { grid-template-columns: 1fr; }
 }
