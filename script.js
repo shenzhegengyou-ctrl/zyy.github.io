@@ -306,6 +306,54 @@ const works = [
   },
 
   {
+    id: "dy-work-mg",
+    cat: "account",
+    catLabel: "账号运营",
+    group: "dy-work",
+    company: "咪咕新空",
+    companyPeriod: "2026.08 — 至今",
+    theme: "b",
+    avatarImg: "assets/img/avatar-work-mg.png",
+    action: "🎵 查看主页",
+    title: "抖音工作账号 · 美工今天不加班",
+    short: "美工今天不加班",
+    role: "工作账号 · 任职期间运营",
+    year: "2026",
+    badge: "工作账号",
+    summary:
+      "任职期间在咪咕新空运营的抖音工作账号「美工今天不加班」：负责账号内容策划与发布，配合业务目标做内容输出与账号运营。",
+    bullets: [
+      "抖音工作账号 · 咪咕新空",
+      "任职期间负责内容策划与账号运营",
+      "🎵 前往抖音主页查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/YpItML2vMr0/", label: "🎵 前往抖音主页", hint: "美工今天不加班 · 抖音" },
+  },
+  {
+    id: "dy-work-xingcan",
+    cat: "account",
+    catLabel: "账号运营",
+    group: "dy-work",
+    company: "咪咕新空",
+    companyPeriod: "2026.08 — 至今",
+    theme: "c",
+    avatarImg: "assets/img/avatar-dy-xingcan.jpg",
+    action: "🎵 查看主页",
+    title: "抖音工作账号 · 咪咕星璨AI",
+    short: "咪咕星璨AI",
+    role: "工作账号 · 任职期间运营",
+    year: "2026",
+    badge: "工作账号",
+    summary:
+      "任职期间在咪咕新空运营的抖音工作账号「咪咕星璨AI」：围绕 AI 主题做内容策划与发布，配合业务目标提升账号曝光与互动。",
+    bullets: [
+      "抖音工作账号 · 咪咕新空",
+      "AI 主题内容策划与账号运营",
+      "🎵 前往抖音主页查看",
+    ],
+    media: { type: "link", href: "https://v.douyin.com/aq8FAvzvCT4/", label: "🎵 前往抖音主页", hint: "咪咕星璨AI · 抖音" },
+  },
+  {
     id: "dy-img",
     cat: "account",
     catLabel: "账号运营",
@@ -752,27 +800,23 @@ function cardHTML(w, index) {
 }
 
 const CAT_ORDER = { account: 0, game: 1, plan: 2, video: 3, design: 4, copy: 5, research: 6, pr: 7 };
-let accountSub = null; // 账号运营分区：null 未选 / xhs 小红书 / dy 抖音
-let dyCat = "all";     // 抖音爆款方向：all / 游戏-图文 / 游戏-视频 / 玩梗
+let accountSub = null;   // 平台：null 未选 / xhs 小红书 / dy 抖音
 
 function updateSubPath() {
   const p = document.getElementById("subPath");
   const t = document.getElementById("subPanelTitle");
   const back = document.getElementById("subBack");
-  if (p) {
-    let s = "全部 › 账号运营";
-    if (accountSub === "xhs") s += " › 小红书 · 个人账号";
-    else if (accountSub === "xhs-work") s += " › 小红书 · 工作账号";
-    else if (accountSub === "dy") s += " › 抖音往期爆款" + (dyCat !== "all" ? " › " + dyCat : "");
-    p.textContent = s;
+  let s = "全部 › 账号运营";
+  let title = "📂 账号运营 · 选择平台";
+  if (accountSub === "xhs") {
+    s += " › 小红书";
+    title = "📕 小红书 · 账号与作品";
+  } else if (accountSub === "dy") {
+    s += " › 抖音";
+    title = "🎵 抖音 · 账号与作品";
   }
-  if (t) {
-    t.textContent =
-      accountSub === "xhs" ? "📕 小红书 · 个人账号"
-      : accountSub === "xhs-work" ? "💼 小红书 · 工作账号"
-      : accountSub === "dy" ? "🎵 抖音往期爆款"
-      : "📂 账号运营 · 选择分区";
-  }
+  if (p) p.textContent = s;
+  if (t) t.textContent = title;
   if (back) back.hidden = !accountSub;
 }
 
@@ -783,38 +827,24 @@ works.filter((w) => w.group === "dy").forEach((w) => {
   DY_TOTALS[w.dycat] = (DY_TOTALS[w.dycat] || 0) + n;
 });
 const DY_ALL = Object.values(DY_TOTALS).reduce((a, b) => a + b, 0);
-function applyDyCounts() {
-  document.querySelectorAll(".sub-filter[data-dycat]").forEach((f) => {
-    const c = f.dataset.dycat === "all" ? DY_ALL : DY_TOTALS[f.dataset.dycat] || 0;
-    const label = f.dataset.dycat === "all" ? "全部" : f.dataset.dycat;
-    f.textContent = `${label} · ${c} 条`;
-  });
-}
-applyDyCounts();
-
 function partitionCardsHTML() {
-  const nXhs = works.filter((w) => w.cat === "account" && w.group === "xhs").length;
-  const nWork = works.filter((w) => w.cat === "account" && w.group === "xhs-work").length;
+  const nXhs = works.filter((w) => w.group === "xhs").length;
+  const nXhsWork = works.filter((w) => w.group === "xhs-work").length;
+  const nDy = works.filter((w) => w.group === "dy").length;
+  const nDyWork = works.filter((w) => w.group === "dy-work").length;
   return `
     <button class="partition-card" data-sub="xhs" type="button">
       <span class="pc-icon"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#FF3D81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20"/><path d="M9 7.5h6"/></svg></span>
-      <span class="pc-name">小红书 · 个人账号</span>
-      <span class="pc-desc">持续运营中 · 累计 13.7K 赞藏<br>单篇笔记最高 4万+ 浏览</span>
-      <span class="pc-count">${nXhs} 个账号</span>
-      <span class="pc-go">进入查看 →</span>
-    </button>
-    <button class="partition-card pc-work" data-sub="xhs-work" type="button">
-      <span class="pc-icon"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#FF5A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
-      <span class="pc-name">小红书 · 工作账号</span>
-      <span class="pc-desc">咪咕新空 · 美工今天不加班<br>厦门灵图科技 · 4 个 POD 账号</span>
-      <span class="pc-count">${nWork} 个账号</span>
+      <span class="pc-name">小红书</span>
+      <span class="pc-desc">${nXhs + nXhsWork} 个账号 · 个人号 + 工作号<br>咪咕新空 / 厦门灵图科技</span>
+      <span class="pc-count">${nXhs + nXhsWork} 个账号</span>
       <span class="pc-go">进入查看 →</span>
     </button>
     <button class="partition-card pc-dy" data-sub="dy" type="button">
       <span class="pc-icon"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#22D3EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
-      <span class="pc-name">抖音往期爆款</span>
-      <span class="pc-desc">3 个合集 · 11 条爆款 · 最高 3.4万 点赞<br>游戏-图文 / 游戏-视频 / 玩梗</span>
-      <span class="pc-count">3 个合集</span>
+      <span class="pc-name">抖音</span>
+      <span class="pc-desc">${nDyWork} 个工作账号 + 往期爆款 ${DY_ALL} 条<br>账号主页 / 爆款合集</span>
+      <span class="pc-count">${nDy + nDyWork} 项</span>
       <span class="pc-go">进入查看 →</span>
     </button>`;
 }
@@ -833,11 +863,6 @@ function renderPartitionCards() {
   grid.querySelectorAll(".partition-card").forEach((el) => {
     el.addEventListener("click", () => {
       accountSub = el.dataset.sub;
-      dyCat = "all";
-      if (subFilters) {
-        subFilters.querySelectorAll(".sub-filter[data-dycat]").forEach((f) => f.classList.toggle("is-active", f.dataset.dycat === "all"));
-        if (subRow2) subRow2.hidden = accountSub !== "dy";
-      }
       renderGrid("account");
       reanimateGrid();
     });
@@ -873,9 +898,10 @@ function renderGrid(filter) {
       renderPartitionCards();
       return;
     }
-    list = works.filter((w) => w.cat === "account" && w.group === accountSub);
-    if (accountSub === "dy" && dyCat !== "all") {
-      list = list.filter((w) => w.dycat === dyCat);
+    if (accountSub === "xhs") {
+      list = works.filter((w) => w.cat === "account" && (w.group === "xhs" || w.group === "xhs-work"));
+    } else {
+      list = works.filter((w) => w.cat === "account" && (w.group === "dy" || w.group === "dy-work"));
     }
   } else {
     list = works.filter((w) => w.cat === filter);
@@ -886,37 +912,12 @@ function renderGrid(filter) {
   const workEndEl = document.querySelector(".work-end");
   if (workEndEl) workEndEl.style.display = "";
 
-  // 小红书 · 工作账号：按公司分组（咪咕新空在上 → 厦门灵图科技在下）
-  let html;
-  let total;
-  if (filter === "account" && accountSub === "xhs-work") {
-    const comps = ["咪咕新空", "厦门灵图科技"];
-    const workList = works.filter((w) => w.cat === "account" && w.group === "xhs-work");
-    const parts = [];
-    let idx = 0;
-    comps.forEach((comp) => {
-      const items = workList.filter((w) => w.company === comp);
-      if (!items.length) return;
-      const per = items[0].companyPeriod || "";
-      parts.push(`
-        <div class="account-group-head">
-          <span class="agh-name">${comp}</span>
-          <span class="agh-period">${per}</span>
-          <span class="agh-count">${items.length} 个账号</span>
-        </div>`);
-      items.forEach((w) => { parts.push(cardHTML(w, idx)); idx++; });
-    });
-    html = parts.join("");
-    total = workList.length;
-  } else {
-    html = list.map((w, i) => cardHTML(w, i)).join("");
-    total = list.length;
-  }
-  grid.innerHTML = html;
+  grid.innerHTML = list.map((w, i) => cardHTML(w, i)).join("");
   const workTotalEl = document.getElementById("workTotal");
   const workTotalEndEl = document.getElementById("workTotalEnd");
-  if (workTotalEl) workTotalEl.textContent = total;
-  if (workTotalEndEl) workTotalEndEl.textContent = total;
+  if (workTotalEl) workTotalEl.textContent = list.length;
+  if (workTotalEndEl) workTotalEndEl.textContent = list.length;
+
 
   const cards = grid.querySelectorAll(".work-card");
   cards.forEach((el, i) => {
@@ -952,7 +953,6 @@ function renderGrid(filter) {
    ------------------------------------------------------------ */
 const filters = document.getElementById("filters");
 const subFilters = document.getElementById("subFilters");
-const subRow2 = document.getElementById("subRow2");
 
 function reanimateGrid() {
   requestAnimationFrame(() => {
@@ -975,37 +975,20 @@ filters.addEventListener("click", (e) => {
   if (subFilters) {
     subFilters.hidden = !isAccount;
     if (isAccount) {
-      // 每次进入账号运营都重置：不预选任何分区，需用户主动选择
+      // 每次进入账号运营都重置：先选平台
       accountSub = null;
-      dyCat = "all";
-      subFilters.querySelectorAll(".sub-filter[data-dycat]").forEach((f) => f.classList.toggle("is-active", f.dataset.dycat === "all"));
-      if (subRow2) subRow2.hidden = true;
     }
   }
   renderGrid(btn.dataset.filter);
   reanimateGrid();
 });
 
-/* 账号运营 二级面板：抖音方向筛选 + 返回分区 */
+/* 账号运营：返回平台选择 */
 if (subFilters) {
-  subFilters.addEventListener("click", (e) => {
-    const b2 = e.target.closest(".sub-filter[data-dycat]");
-    if (b2) {
-      dyCat = b2.dataset.dycat;
-      subFilters.querySelectorAll(".sub-filter[data-dycat]").forEach((f) => {
-        f.classList.toggle("is-active", f === b2);
-      });
-      renderGrid("account");
-      reanimateGrid();
-    }
-  });
   const subBack = document.getElementById("subBack");
   if (subBack) {
     subBack.addEventListener("click", () => {
       accountSub = null;
-      dyCat = "all";
-      subFilters.querySelectorAll(".sub-filter[data-dycat]").forEach((f) => f.classList.toggle("is-active", f.dataset.dycat === "all"));
-      if (subRow2) subRow2.hidden = true;
       renderGrid("account");
       reanimateGrid();
     });
