@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>周雨悦 YUYUE ZHOU — 广告创意作品集</title>
-<meta name="description" content="周雨悦，厦门大学嘉庚学院广告学 2027 届。新媒体运营 / 品牌策划 / 视频广告 / 平面设计 / AI 创作。让好内容被看见，让品牌被记住。">
+<meta name="description" content="周雨悦，厦门大学嘉庚学院广告学 2027 届。内容运营 / 增长投放 / 营销策划方向。用内容与数据让好内容被看见，让品牌被记住。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23CDFF45'/%3E%3Ctext x='32' y='45' font-size='38' font-family='Arial Black,Arial' font-weight='900' text-anchor='middle' fill='%230B0B0E'%3EZ%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,7 +30,7 @@
     <a href="#experience" class="nav-link"><span class="nav-num">04</span>经历</a>
     <a href="#skills" class="nav-link"><span class="nav-num">05</span>技能</a>
     <a href="#contact" class="nav-link"><span class="nav-num">06</span>联系</a>
-    <a class="nav-resume" href="assets/pdf/简历.pdf" download="周雨悦-简历.pdf">下载简历</a>
+    <button class="nav-resume js-resume-open" type="button" aria-haspopup="dialog" aria-controls="resumeModal">下载简历</button>
   </nav>
   <button class="nav-burger" id="navBurger" aria-label="打开菜单" aria-expanded="false">
     <span></span><span></span>
@@ -59,12 +59,12 @@
       <p class="hero-type reveal" aria-live="polite"><span id="typeText"></span><span class="type-caret" aria-hidden="true"></span></p>
 
       <div class="hero-tags reveal">
-        <span>新媒体运营</span><span>平台运营</span><span>品牌策划</span><span>广告投放</span><span>视频广告</span><span>平面设计</span><span>AI 创作</span>
+        <span>内容运营</span><span>增长投放</span><span>营销策划</span><span>新媒体运营</span><span>品牌策划</span><span>视频广告</span><span>AI 创作</span>
       </div>
 
       <div class="hero-cta reveal">
         <a class="btn btn-primary" href="#work">查看我的作品</a>
-        <a class="btn btn-ghost" href="assets/pdf/简历.pdf" download="周雨悦-简历.pdf">下载简历 ↓</a>
+        <button class="btn btn-ghost js-resume-open" type="button" aria-haspopup="dialog" aria-controls="resumeModal">下载简历 ↓</button>
       </div>
     </div>
 
@@ -78,12 +78,12 @@
         <span class="stat-label">抖音最高单条播放</span>
       </div>
       <div class="stat reveal">
-        <span class="stat-num" data-count="4">4<span class="stat-unit">万+</span></span>
-        <span class="stat-label">小红书单篇笔记浏览</span>
+        <span class="stat-num" data-count="10">10<span class="stat-unit">万+</span></span>
+        <span class="stat-label">小红书工作号单篇曝光</span>
       </div>
       <div class="stat reveal">
-        <span class="stat-num" data-count="200">+200<span class="stat-unit">%</span></span>
-        <span class="stat-label">实习期单月获客增长</span>
+        <span class="stat-num" data-count="700">700<span class="stat-unit">+</span></span>
+        <span class="stat-label">小红书工作号单篇涨粉</span>
       </div>
       <div class="stat reveal">
         <span class="stat-num" data-count="50">50<span class="stat-unit">+</span></span>
@@ -221,9 +221,9 @@
           <p class="aci-hello">你好，我是周雨悦 👋</p>
           <p class="aci-type"><span id="aboutTypeText"></span><span class="aci-caret" aria-hidden="true"></span></p>
           <div class="aci-stats">
-            <span><b>160万+</b> 抖音播放</span>
-            <span><b>4万+</b> 小红书浏览</span>
-            <span><b>13.7K</b> 赞藏</span>
+            <span><b>10万+</b> 工作号曝光</span>
+            <span><b>700+</b> 工作号单篇涨粉</span>
+            <span><b>30%</b> 项目获客增长</span>
           </div>
           <div class="aci-actions">
             <a class="aci-btn aci-mail" href="https://mail.qq.com/" target="_blank" rel="noopener">📧 发邮件</a>
@@ -250,7 +250,7 @@
         <div class="job-focus">
           <p class="job-focus-label">求职方向</p>
           <div class="job-focus-chips">
-            <span>平台运营</span><span>内容运营</span><span>广告投放</span><span>品牌 / 广告 / 文案策划</span><span>SEO / SEM / GEO</span>
+            <span>内容运营</span><span>增长投放</span><span>营销策划</span><span>新媒体运营</span><span>品牌 / 广告 / 文案策划</span><span>SEO / GEO</span>
           </div>
         </div>
 
@@ -265,7 +265,7 @@
       <article class="about-card reveal">
         <span class="about-card-emoji">🚀</span>
         <h3>网感爆棚</h3>
-        <p>个人小红书账号单篇笔记浏览 4万+；抖音浏览 160万+，点赞量 2.8万+、2.9万+。善于拆解爆款、制造爆款。</p>
+        <p>小红书工作号单篇笔记涨粉 700+、曝光 10万+；抖音单条最高播放 160万+、点赞 3.4万+。善于拆解爆款、制造爆款，并用数据复盘持续迭代。</p>
       </article>
       <article class="about-card reveal">
         <span class="about-card-emoji">🤖</span>
@@ -306,11 +306,13 @@
         <div class="tl-dot"></div>
         <div class="tl-body">
           <p class="tl-period">2026.08 — 至今</p>
-          <h3>中国移动咪咕 · 咪咕新空 AI 电商平台项目组 · 内容运营实习生</h3>
-          <p class="tl-role">内容运营 · 小红书 / 抖音 / 微信视频号</p>
+          <h3>中国移动咪咕 · 内容运营实习生</h3>
+          <p class="tl-role">咪咕新空 AI 电商工具 · 小红书 / 抖音 / 微信视频号</p>
           <ul>
-            <li>从 0-1 独立负责小红书、抖音、微信视频号运营，结合热点与用户需求策划内容并发布，定期复盘数据，增加品牌曝光、为会员社群拉新</li>
-            <li>为内容中心的营销热点、攻略速通、实战案例等栏目撰写官网文章，引导用户体验产品</li>
+            <li>为新项目从 0-1 搭建抖音、小红书、视频号矩阵，围绕品牌曝光与拉新策划内容并发布</li>
+            <li>建立爆款标题模板与内容框架，定期复盘数据，建设品牌曝光度与新媒体平台 SEO，为会员社群拉新</li>
+            <li>实现单篇笔记涨粉 700+、曝光 10万+，项目获客量提升 30%</li>
+            <li>为内容中心营销热点、攻略速通、实战案例等栏目撰写官网文章，引导用户体验产品</li>
           </ul>
         </div>
       </article>
@@ -322,10 +324,10 @@
           <h3>厦门灵图科技有限公司 · 新媒体运营实习生</h3>
           <p class="tl-role">获客 · 线索方向</p>
           <ul>
-            <li>运营小红书、抖音、微信公众号矩阵，维持 4 个小红书账号日常更新</li>
-            <li>拆解爆款，建立标题模板与内容框架，执行 GEO/SEO 铺设与流量干预</li>
-            <li>每周复盘数据、A/B 测试选题，单月获客数量提升 200%</li>
-            <li>协助薯条投流与官号合作推广，月均获取有效客资 50–60 条</li>
+            <li>负责运营 4 个新媒体账号矩阵，单月获取有效客资 50–60 条，个人单月获客数量提升 200%</li>
+            <li>执行小红书 GEO/SEO 铺设与流量干预，协同团队跑通公域曝光 → 线索引流 → 私域转化链路</li>
+            <li>负责账号私信开口率提升 65%，协助团队将私信 → 留资环节转化率提升 25%</li>
+            <li>定期分析各平台数据表现，定位高转化选题并归因，协助选题测试与投流，提升内容 ROI</li>
           </ul>
         </div>
       </article>
@@ -351,7 +353,7 @@
           <p class="tl-role">兔耳象工作室 · 负责汇报 / PPT / 音频 / 用户调研 / 网络宣发</p>
           <ul>
             <li>规则怪谈题材轻量化文字互动网页游戏，Sugarcube2 + AIGC 内容生成，多结局剧情</li>
-            <li>小红书单篇宣传帖曝光 9000+，自建测试微信社群 60+ 人，收集有效建议 30+ 条</li>
+            <li>项目宣传实现曝光 1万+，自建测试微信社群 60+ 人，收集有效建议 30+ 条</li>
             <li>BGM 使用 Suno 制作、音效使用 Stable Audio，并完成音频方案与整合</li>
             <li>在线试玩：zoo-horror-game.netlify.app（建议电脑浏览器打开）</li>
           </ul>
@@ -386,25 +388,39 @@
       <article class="skill-card reveal">
         <h3>内容与策划</h3>
         <div class="chips">
-          <span>内容策划与账号运营</span><span>广告 / 品牌策划</span><span>整合营销传播</span><span>市场调研</span><span>用户洞察</span><span>GEO / SEO</span>
+          <span>内容策划与账号运营</span><span>内容增长与获客</span><span>广告 / 品牌策划</span><span>整合营销传播</span><span>市场调研与用户洞察</span><span>GEO / SEO</span><span>投流与转化分析</span>
         </div>
       </article>
       <article class="skill-card reveal">
-        <h3>视频制作</h3>
-        <div class="chips">
-          <span>Premiere Pro</span><span>After Effects</span><span>剪映</span><span>DaVinci Resolve</span><span>视频广告制作</span><span>调色</span>
+        <h3>视频创作</h3>
+        <div class="skill-levels">
+          <div class="skill-level skill-level--advanced">
+            <span class="skill-level-label">精通</span>
+            <div class="chips"><span>剪映</span><span>Premiere Pro</span></div>
+          </div>
+          <div class="skill-level skill-level--basic">
+            <span class="skill-level-label">入门</span>
+            <div class="chips"><span>After Effects</span><span>DaVinci Resolve</span><span>调色</span></div>
+          </div>
         </div>
       </article>
       <article class="skill-card reveal">
         <h3>平面设计</h3>
-        <div class="chips">
-          <span>Photoshop</span><span>Illustrator</span><span>平面广告设计</span><span>海报 / 主视觉</span>
+        <div class="skill-levels">
+          <div class="skill-level skill-level--advanced">
+            <span class="skill-level-label">精通</span>
+            <div class="chips"><span>Photoshop</span></div>
+          </div>
+          <div class="skill-level skill-level--basic">
+            <span class="skill-level-label">入门</span>
+            <div class="chips"><span>Illustrator</span></div>
+          </div>
         </div>
       </article>
       <article class="skill-card reveal">
         <h3>AI 创作</h3>
         <div class="chips">
-          <span>AI 视频全流程</span><span>Suno 音乐生成</span><span>文生图 / 图生视频</span><span>AI 广告创作</span>
+          <span>Codex / WorkBuddy</span><span>即梦 / 可灵 / Midjourney</span><span>Suno / Stable Audio</span><span>AI 视频全流程</span><span>文生图 / 图生视频</span>
         </div>
       </article>
     </div>
@@ -415,7 +431,7 @@
     <div class="contact-inner reveal">
       <p class="section-label"><span class="num">06</span> / CONTACT</p>
       <h2 class="contact-title">一起做点<br><span class="hl">酷的</span>？</h2>
-      <p class="contact-sub">实习 + 秋招 并行求职中：平台运营 · 内容运营 · 广告投放 · 品牌 / 广告 / 文案策划 · SEO / SEM / GEO。<br>期待与优秀的团队相遇。</p>
+      <p class="contact-sub">实习 + 秋招 并行求职中：内容运营 · 增长投放 · 营销策划。<br>可按岗位方向下载对应简历，期待与优秀的团队相遇。</p>
 
       <div class="contact-ways">
         <a class="contact-way" href="https://mail.qq.com/" target="_blank" rel="noopener">
@@ -433,9 +449,10 @@
       </div>
 
       <div class="contact-cta">
-        <a class="btn btn-primary" href="assets/pdf/简历.pdf" download="周雨悦-简历.pdf">下载我的简历</a>
+        <button class="btn btn-primary js-resume-open" type="button" aria-haspopup="dialog" aria-controls="resumeModal">下载我的简历</button>
         <a class="btn btn-ghost" href="https://mail.qq.com/" target="_blank" rel="noopener">发送邮件 →</a>
       </div>
+      <p class="resume-choice-note">内容运营 / 增长投放 / 营销策划 · 点击下载按钮选择对应版本</p>
 
       <!-- 留言墙：给周雨悦打分 + 留句话 -->
       <div class="guestbook reveal">
@@ -495,6 +512,62 @@
         <button class="btn btn-ghost" data-close>← 关闭窗口</button>
       </div>
     </div>
+  </div>
+</dialog>
+
+<!-- 简历方向选择弹窗 -->
+<dialog class="modal resume-modal" id="resumeModal" aria-labelledby="resumeModalTitle">
+  <div class="modal-backdrop" data-resume-close></div>
+  <div class="modal-panel resume-modal-panel">
+    <button class="modal-close" data-resume-close aria-label="关闭">✕ 关闭</button>
+    <div class="resume-modal-head">
+      <p class="resume-modal-kicker">RESUME / 03 VERSIONS</p>
+      <h3 class="resume-modal-title" id="resumeModalTitle">选择适合岗位方向的简历</h3>
+      <p class="resume-modal-sub">三个版本均为 1 页 A4 PDF。按目标岗位选择，点击卡片即可下载。</p>
+    </div>
+
+    <div class="resume-options">
+      <a class="resume-option resume-option--content" href="assets/pdf/周雨悦-内容运营.pdf" download="周雨悦-内容运营.pdf">
+        <span class="resume-option-num">01</span>
+        <span class="resume-option-tag">CONTENT</span>
+        <h4>内容运营</h4>
+        <p class="resume-option-role">内容策划 · 账号矩阵 · 品牌曝光与获客</p>
+        <ul>
+          <li>0-1 新媒体矩阵搭建</li>
+          <li>爆款内容与标题模板</li>
+          <li>SEO / GEO 与数据复盘</li>
+        </ul>
+        <span class="resume-option-download">下载内容运营版 ↓</span>
+      </a>
+
+      <a class="resume-option resume-option--growth" href="assets/pdf/周雨悦-增长投放.pdf" download="周雨悦-增长投放.pdf">
+        <span class="resume-option-num">02</span>
+        <span class="resume-option-tag">GROWTH</span>
+        <h4>增长投放</h4>
+        <p class="resume-option-role">获客线索 · 投流测试 · 转化链路</p>
+        <ul>
+          <li>公域曝光 → 线索 → 私域转化</li>
+          <li>私信开口率与留资转化优化</li>
+          <li>投流测试与 ROI 数据分析</li>
+        </ul>
+        <span class="resume-option-download">下载增长投放版 ↓</span>
+      </a>
+
+      <a class="resume-option resume-option--planning" href="assets/pdf/周雨悦-营销策划.pdf" download="周雨悦-营销策划.pdf">
+        <span class="resume-option-num">03</span>
+        <span class="resume-option-tag">PLANNING</span>
+        <h4>营销策划</h4>
+        <p class="resume-option-role">品牌策略 · 整合营销 · 创意内容</p>
+        <ul>
+          <li>品牌全案与提案</li>
+          <li>市场调研与用户洞察</li>
+          <li>视频 / 平面创意物料</li>
+        </ul>
+        <span class="resume-option-download">下载营销策划版 ↓</span>
+      </a>
+    </div>
+
+    <p class="resume-modal-foot">建议投递前确认岗位方向，选择对应版本提交即可。</p>
   </div>
 </dialog>
 

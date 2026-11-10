@@ -155,10 +155,10 @@ const works = [
     badge: "13.7K 赞藏",
     year: "持续运营",
     summary:
-      "长期运营的个人小红书账号，累计收获 13.7K 次赞与收藏，单篇笔记最高浏览量 4 万+、赞藏 7000+。以真实的内容审美与网感持续产出，验证了从选题、内容到账号运营的全链路能力。",
+      "长期运营的个人小红书账号，累计收获 13.7K 次赞与收藏，单篇笔记赞藏 7000+。以真实的内容审美与网感持续产出，验证了从选题、内容到账号运营的全链路能力。",
     bullets: [
       "累计收获 13.7K 次赞与收藏",
-      "单篇笔记最高浏览 4 万+、赞藏 7000+",
+      "单篇笔记赞藏 7000+",
       "持续内容产出与账号运营",
       "📕 前往我的小红书主页看看",
     ],
@@ -188,15 +188,18 @@ const works = [
     theme: "e",
     avatarImg: "assets/img/avatar-work-mg.png",
     action: "📕 查看主页",
-    title: "小红书工作账号 · 美工今天不加班",
+    featured: true,
+    title: "小红书工作号 · 美工今天不加班",
     short: "美工今天不加班",
     role: "工作账号 · 任职期间运营",
     year: "2026",
-    badge: "工作账号",
+    badge: "1万+ 赞藏",
     summary:
-      "任职期间负责运营的小红书工作账号「美工今天不加班」：结合账号定位策划并发布内容，配合业务目标提升曝光与互动，验证了从内容策划到账号运营的落地能力。",
+      "任职期间负责运营的小红书工作号「美工今天不加班」：单篇笔记涨粉 700+、曝光 10 万+，累计收获 1 万+ 次赞与收藏，围绕账号定位策划并发布内容，验证了从选题、内容到账号运营的落地能力。",
     bullets: [
-      "小红书工作账号 · 任职期间运营",
+      "小红书工作号 · 任职期间运营",
+      "单篇笔记涨粉 700+、曝光 10 万+",
+      "累计收获 1 万+ 次赞与收藏",
       "结合账号定位策划内容、发布并复盘",
       "📕 前往小红书主页查看",
     ],
@@ -784,6 +787,7 @@ function cardHTML(w, index) {
   const info = isDy
     ? ""
     : `
+      ${w.featured ? '<span class="card-featured-note">🔥 近期涨粉较多</span>' : ""}
       <div class="card-meta">
         <span class="card-cat">${isHot ? "★ " : ""}${w.catLabel}</span>
         <span class="card-year">${w.year}</span>
@@ -791,7 +795,7 @@ function cardHTML(w, index) {
       <h3 class="card-title">${w.title}</h3>
       <p class="card-role">${w.role}</p>`;
   return `
-    <article class="work-card${isHot ? " work-card--hot" : ""}${isDy ? " work-card--tile" : ""}" data-id="${w.id}" data-cat="${w.cat}" role="listitem">
+    <article class="work-card${isHot ? " work-card--hot" : ""}${isDy ? " work-card--tile" : ""}${w.featured ? " work-card--featured" : ""}" data-id="${w.id}" data-cat="${w.cat}" role="listitem">
       <button class="work-card-btn" data-open="${w.id}" aria-label="查看作品：${w.title}">
         ${coverHTML(w, index)}
       </button>
@@ -837,6 +841,7 @@ function partitionCardsHTML() {
       <span class="pc-icon"><svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="#FF3D81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20"/><path d="M9 7.5h6"/></svg></span>
       <span class="pc-name">小红书</span>
       <span class="pc-desc">${nXhs + nXhsWork} 个账号 · 个人号 + 工作号<br>咪咕新空 / 厦门灵图科技</span>
+      <span class="pc-featured">🔥 近期涨粉较多：美工今天不加班 · 1万+ 赞藏</span>
       <span class="pc-count">${nXhs + nXhsWork} 个账号</span>
       <span class="pc-go">进入查看 →</span>
     </button>
@@ -892,14 +897,19 @@ function renderGrid(filter) {
     return;
   }
   if (filter === "all") {
-    list = [...works].sort((a, b) => (CAT_ORDER[a.cat] ?? 9) - (CAT_ORDER[b.cat] ?? 9));
+    list = [...works].sort((a, b) =>
+      (CAT_ORDER[a.cat] ?? 9) - (CAT_ORDER[b.cat] ?? 9) ||
+      Number(Boolean(b.featured)) - Number(Boolean(a.featured))
+    );
   } else if (filter === "account") {
     if (!accountSub) {
       renderPartitionCards();
       return;
     }
     if (accountSub === "xhs") {
-      list = works.filter((w) => w.cat === "account" && (w.group === "xhs" || w.group === "xhs-work"));
+      list = works
+        .filter((w) => w.cat === "account" && (w.group === "xhs" || w.group === "xhs-work"))
+        .sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)));
     } else {
       list = works.filter((w) => w.cat === "account" && (w.group === "dy" || w.group === "dy-work"));
     }
@@ -921,7 +931,10 @@ function renderGrid(filter) {
 
   const cards = grid.querySelectorAll(".work-card");
   cards.forEach((el, i) => {
-    el.style.setProperty("--span", SPAN_PATTERN[i % SPAN_PATTERN.length]);
+    el.style.setProperty(
+      "--span",
+      el.classList.contains("work-card--featured") ? 8 : SPAN_PATTERN[i % SPAN_PATTERN.length]
+    );
   });
 
   cards.forEach((el) => {
@@ -1379,8 +1392,9 @@ if (methodToggle && methodContent) {
    关于我 · 互动卡片打字机（循环输出一句话）
    ------------------------------------------------------------ */
 const ABOUT_PHRASES = [
-  "小红书单篇 4万+ 浏览 · 赞藏 7000+",
+  "小红书工作号单篇涨粉 700+ · 曝光 10万+",
   "抖音爆款最高 160万+ 播放",
+  "咪咕项目获客量提升 30%",
   "一个人跑通 AI 视频全流程",
   "品牌策划全案 · 团队第五名",
 ];
@@ -1694,32 +1708,38 @@ if (viralBtn && viralInput) {
 }
 
 /* ============================================================
-   简历按钮动画：📦 打包 → 下载
+   简历方向选择：内容运营 / 增长投放 / 营销策划
    ============================================================ */
-document.querySelectorAll('a[href$="简历.pdf"][download]').forEach((a) => {
-  a.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (a.classList.contains("is-loading")) return;
-    a.classList.add("is-loading");
-    const originText = a.textContent;
-    a.textContent = "📦 打包中…";
-    const bar = document.createElement("span");
-    bar.className = "resume-progress";
-    a.appendChild(bar);
-    setTimeout(() => {
-      a.classList.remove("is-loading");
-      a.textContent = originText;
-      if (bar.parentNode) bar.parentNode.removeChild(bar);
-      const tmp = document.createElement("a");
-      tmp.href = a.href;
-      tmp.download = a.getAttribute("download") || "周雨悦-简历.pdf";
-      document.body.appendChild(tmp);
-      tmp.click();
-      document.body.removeChild(tmp);
-      showToast("📄 简历已开始下载，谢谢你的关注！");
-    }, 900);
+const resumeModal = document.getElementById("resumeModal");
+if (resumeModal) {
+  const closeResumeModal = () => {
+    if (resumeModal.open) resumeModal.close();
+    document.body.style.overflow = "";
+  };
+
+  document.querySelectorAll(".js-resume-open").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (navLinks) navLinks.classList.remove("open");
+      if (navBurger) navBurger.setAttribute("aria-expanded", "false");
+      resumeModal.showModal();
+      document.body.style.overflow = "hidden";
+    });
   });
-});
+
+  resumeModal.querySelectorAll("[data-resume-close]").forEach((el) => {
+    el.addEventListener("click", closeResumeModal);
+  });
+  resumeModal.addEventListener("cancel", closeResumeModal);
+  resumeModal.addEventListener("click", (e) => {
+    if (e.target === resumeModal) closeResumeModal();
+  });
+  resumeModal.querySelectorAll(".resume-option").forEach((option) => {
+    option.addEventListener("click", () => {
+      showToast(`📄 ${option.querySelector("h4")?.textContent || "简历"}版本已开始下载`);
+      setTimeout(closeResumeModal, 500);
+    });
+  });
+}
 
 /* ============================================================
    留言墙：打分 + 留句话 → 生成邮件草稿
